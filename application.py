@@ -92,7 +92,3 @@ def register():
         return render_template("register.html")
 
 
-
-@app.route("/quiz", methods=["POST","GET"])
-def quiz():
-    pass
