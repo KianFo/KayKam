@@ -101,4 +101,12 @@ def logout():
     # Redirect user to login form
     return redirect("/")
 
+@app.route("/quize", methods=["GET", "POST"])
+def quize():
+   if request.method == "POST":
+       pass
+
+   else:
+       return render_template("quize.html")
+
 
