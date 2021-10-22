@@ -29,6 +29,23 @@
               </div>
             </div>
           </nav>
+          <script>
+          function blink()
+            {
+                let body = document.querySelector('#blink');
+                if (body.style.color == 'blue')
+                {
+                    body.style.color = 'red';
+                }
+                else
+                {
+                    body.style.color = 'blue';
+                }
+            }
+
+            // Blink every 500ms
+            window.setInterval(blink, 400);
+        </script>
         <title>Barca!</title>
         <link href="static/style.css" rel="stylesheet">
     </head>
