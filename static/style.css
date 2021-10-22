@@ -462,7 +462,10 @@ footer button.show{
     color: #E84545;
 }
 
-
+.rounded {
+    border-radius: 25px;
+    padding: 40px;
+}
 
 
 
