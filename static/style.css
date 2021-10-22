@@ -22,14 +22,20 @@
 {
     color: blue;
 }
-.kawhite
+.kacyan
 {
-    color: whitesmoke;
+    color: #00EAD3;
 }
-.kagrey
+.kared
 {
-    color: grey;
+    color: #950101;
 }
+
+.kaywhite
+{
+    color: #FEF9EF;
+}
+
 .forca
 {
     color: #eedba7;
@@ -40,7 +46,7 @@
 }
 
 .mt-50 {
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 .nav-color {
@@ -467,12 +473,30 @@ footer button.show{
     text-align: center;
 }
 
-.blur
+.navbar_index
 {
-    backdrop-filter: blur(5px);
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    background-color: #E6E6E6;
 }
 
+.navbar_grey
+{
+    color: #393E46;
+}
+
+.barca_dark
+{
+    color: #52616B;
+}
+
+.barca_gold
+{
+    color: #334756;
+}
+
+.left_distance
+{
+    margin-left: 20px;
+}
 
 
 

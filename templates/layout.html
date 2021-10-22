@@ -4,26 +4,26 @@
         <meta name="viewport" content="width=device-width initial-scale=1">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light uigradients">
+        <nav class="navbar navbar-expand-lg navbar_index">
             <div class="container-fluid">
 
-              <a class="navbar-brand xxlarge blue" id="blink">Barca!</a>
+              <a class="navbar-brand blue barca_gold" style="font-size: 45px;" id="blink">Barca!</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link xlarge" style="color:white;" href="{{ url_for('index') }}">Home</a>
+                    <a class="nav-link navbar_grey" style="font-size: 25px;" href="{{ url_for('index') }}">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link xlarge" href="{{ url_for('news') }}">News</a>
+                    <a class="nav-link navbar_grey" style="font-size: 25px;" href="{{ url_for('news') }}">News</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link xlarge"style="color:white;"  href="{{ url_for('quize') }}" >Quiz</a>
+                    <a class="nav-link navbar_grey" style="font-size: 25px;" href="{{ url_for('quize') }}" >Quiz</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link xlarge" href="{{ url_for('logout') }}">Log out</a>
+                    <a class="nav-link navbar_grey" style="font-size: 25px;" href="{{ url_for('logout') }}">Log out</a>
                   </li>
                 </ul>
               </div>
@@ -31,24 +31,6 @@
           </nav>
         <title>Barca!</title>
         <link href="static/style.css" rel="stylesheet">
-
-        <script>
-          function blink()
-            {
-                let body = document.querySelector('#blink');
-                if (body.style.visibility == 'hidden')
-                {
-                    body.style.visibility = 'visible';
-                }
-                else
-                {
-                    body.style.visibility = 'hidden';
-                }
-            }
-
-            // Blink every 500ms
-            window.setInterval(blink, 500);
-        </script>
     </head>
     <body>
         {% block body %}
