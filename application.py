@@ -102,7 +102,7 @@ def logout():
     return redirect("/")
 
 @app.route("/quize", methods=["GET", "POST"])
-def quize():
+def quiz():
    if request.method == "POST":
        pass
 
@@ -110,3 +110,7 @@ def quize():
        return render_template("quize.html")
 
 
+
+@app.route("/news", methods=["GET", "POST"])
+def news():
+    return render_template("news.html")
