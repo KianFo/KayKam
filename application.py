@@ -102,7 +102,7 @@ def logout():
     return redirect("/")
 
 @app.route("/quize", methods=["GET", "POST"])
-def quiz():
+def quize():
    if request.method == "POST":
        pass
 
