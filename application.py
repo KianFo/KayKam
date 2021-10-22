@@ -114,3 +114,35 @@ def quize():
 @app.route("/news", methods=["GET", "POST"])
 def news():
     return render_template("news.html")
+
+@app.route("/news1")
+def news1():
+    return render_template("news1.html")
+
+@app.route("/news2")
+def news2():
+    return render_template("news2.html")
+
+@app.route("/news3")
+def news3():
+    return render_template("news3.html")
+
+@app.route("/news4")
+def news4():
+    return render_template("news4.html")
+
+@app.route("/news5")
+def news5():
+    return render_template("news5.html")
+
+@app.route("/news6")
+def news6():
+    return render_template("news6.html")
+
+@app.route("/news7")
+def news7():
+    return render_template("news7.html")
+
+@app.route("/news8")
+def news8():
+    return render_template("news8.html")
