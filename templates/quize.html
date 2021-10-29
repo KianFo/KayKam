@@ -11,52 +11,53 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light quizgradients">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar_index">
+            <div class="container-fluid">
 
-          <a class="navbar-brand" style="font-size: 70px;" id="blink">Barca!</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link xlarge" style="color:white;" href="{{ url_for('index') }}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link xlarge" style="color: #E84545;" href="{{ url_for('news') }}">News</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link xlarge"style="color:white;"  href="{{ url_for('quize') }}" >Quiz</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link xlarge" style="color: #E84545;" href="{{ url_for('logout') }}">Log out</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <script>
+              <a class="navbar-brand blue barca_gold" style="font-size: 45px;" id="blink">Barca!</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link navbar_grey" style="font-size: 25px;" href="{{ url_for('index') }}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navbar_grey" style="font-size: 25px;" href="{{ url_for('news') }}">News</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navbar_grey" style="font-size: 25px;" href="{{ url_for('quize') }}" >Quiz</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navbar_grey" style="font-size: 25px;" href="{{ url_for('logout') }}">Log out</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+       <script>
           function blink()
             {
                 let body = document.querySelector('#blink');
-                if (body.style.visibility == 'hidden')
+                if (body.style.color == 'blue')
                 {
-                    body.style.visibility = 'visible';
-                    body.style.color = '#F67280';
+                    body.style.color = 'red';
                 }
                 else
                 {
-                    body.style.visibility = 'hidden';
+                    body.style.color = 'blue';
                 }
             }
 
             // Blink every 500ms
-            window.setInterval(blink, 500);
-        </script>
+            window.setInterval(blink, 400);
+       </script>
 
 </head>
 <body class="backquiz">
+    <h1 style="text-align: center; color: grey; margin-top: 90px; font-size: 70px;">Let's see how much you are a barcafan!</h1>
+    <h1 style="text-align: center; color: grey; font-size: 70px;">Please, Don't disappoint us</h1>
     <!-- start Quiz button -->
     <div class="start_btn"><button>Start Quiz</button></div>
     <!-- Info Box -->
