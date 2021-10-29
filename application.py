@@ -28,6 +28,7 @@ db = SQL("sqlite:///barca.db")
 @app.route("/")
 @login_required
 def index():
+    user_id = session["user_id"]
     return render_template("index.html")
 
 
@@ -146,3 +147,8 @@ def news7():
 @app.route("/news8")
 def news8():
     return render_template("news8.html")
+    
+    
+@app.route("/profile")
+def profile():
+    return render_template("profile.html")
