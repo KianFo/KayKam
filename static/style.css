@@ -507,12 +507,24 @@ footer button.show{
     margin-left: 100px;
 }
 
+.new_center
+{
+    text-align: center;
+    align-items: center;
+}
 
+.ps {
+    font-size: 25px;
+}
 
+#rcorners1 {
+  border-radius: 25px;
+  padding: 20px;
+}
 
-
-
-
+.marginnews {
+    margin-left: 20px;
+}
 
 
 
@@ -598,7 +610,7 @@ footer button.show{
 
 
 .backnews {
-    background: white;
+    background-color: white;
 }
 
 

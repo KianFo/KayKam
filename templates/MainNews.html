@@ -2,6 +2,31 @@
 <html lang="en">
     <head>
         <title>News</title>
+        <nav class="navbar navbar-expand-lg navbar_index">
+            <div class="container-fluid">
+
+              <a class="navbar-brand blue barca_gold" style="font-size: 45px;" id="blink">Barca!</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link navbar_grey" style="font-size: 25px;" href="{{ url_for('index') }}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navbar_grey" style="font-size: 25px;" href="{{ url_for('news') }}">News</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navbar_grey" style="font-size: 25px;" href="{{ url_for('quize') }}" >Quiz</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navbar_grey" style="font-size: 25px;" href="{{ url_for('logout') }}">Log out</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
         <style>
             body {
               background-image: url('https://www.dosde.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/b/o/book-fc-barcelona-bar%C3%A7a-illustrated-history-of-the-football-club_978-84-9103-081-2_55-001-01_B12.jpg');
@@ -10,6 +35,26 @@
               background-size: 100% 100%;
             }
         </style>
+        <script>
+          function blink()
+            {
+                let body = document.querySelector('#blink');
+                if (body.style.color == 'blue')
+                {
+                    body.style.color = 'red';
+                }
+                else
+                {
+                    body.style.color = 'blue';
+                }
+            }
+
+            // Blink every 500ms
+            window.setInterval(blink, 400);
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link href="static/style.css" rel="stylesheet">
     </head>
     <body>
         {% block body %}
