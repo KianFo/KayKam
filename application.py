@@ -28,6 +28,7 @@ db = SQL("sqlite:///barca.db")
 @app.route("/")
 @login_required
 def index():
+    user_id = session["user_id"]
     return render_template("index.html")
 
 
@@ -104,6 +105,7 @@ def logout():
 @app.route("/quize", methods=["GET", "POST"])
 def quize():
    if request.method == "POST":
+       user_id = session["user_id"]
        pass
 
    else:
@@ -146,3 +148,24 @@ def news7():
 @app.route("/news8")
 def news8():
     return render_template("news8.html")
+
+
+@app.route("/profile", methods=["POST", "GET"])
+def profile():
+    if request.method == "POST":
+        user_id = session["user_id"]
+
+        card_number = request.form.get("card_number")
+        card_password = request.form.get("card_password")
+        name = db.execute("SELECT username FROM users WHERE id=?", user_id)[0]["username"]
+
+
+        try:
+            db.execute("INSERT INTO credit (name, card_password, card_number, user_id) VALUES (?, ?, ?, ?)", name, card_password, card_number, user_id)
+        except:
+            return render_template("test1.html")
+
+        return redirect("/")
+
+    else:
+        return render_template("profile.html")
