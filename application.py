@@ -168,4 +168,6 @@ def profile():
         return redirect("/")
 
     else:
-        return render_template("profile.html")
+        user_id = session["user_id"]
+        name = db.execute("SELECT username FROM users WHERE id=?", user_id)[0]["username"]
+        return render_template("profile.html", name = name)
