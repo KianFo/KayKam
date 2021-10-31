@@ -29,7 +29,8 @@ db = SQL("sqlite:///barca.db")
 @login_required
 def index():
     user_id = session["user_id"]
-    return render_template("index.html")
+    name = session["username"]
+    return render_template("index.html", name=name)
 
 
 @app.route("/login", methods=["POST","GET"])
@@ -56,6 +57,7 @@ def login():
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
+        session["username"] = rows[0]["username"]
         return redirect("/")
 
     else:
