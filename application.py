@@ -106,55 +106,64 @@ def logout():
 
 @app.route("/quize", methods=["GET", "POST"])
 def quize():
-   if request.method == "POST":
-       user_id = session["user_id"]
-       pass
-
-   else:
-       return render_template("quize.html")
-
+    user_id = session["user_id"]
+    try:
+        name = session["username"]
+        return render_template("quize.html", name=name)
+    except:
+        pass
 
 
 @app.route("/news", methods=["GET", "POST"])
 def news():
-    return render_template("news.html")
+    name = session["username"]
+    return render_template("news.html", name=name)
 
 @app.route("/news1")
 def news1():
-    return render_template("news1.html")
+    name = session["username"]
+    return render_template("news1.html", name=name)
 
 @app.route("/news2")
 def news2():
-    return render_template("news2.html")
+    name = session["username"]
+    return render_template("news2.html", name=name)
 
 @app.route("/news3")
 def news3():
-    return render_template("news3.html")
+    name = session["username"]
+    return render_template("news3.html", name=name)
 
 @app.route("/news4")
 def news4():
-    return render_template("news4.html")
+    name = session["username"]
+    return render_template("news4.html", name=name)
 
 @app.route("/news5")
 def news5():
-    return render_template("news5.html")
+    name = session["username"]
+    return render_template("news5.html", name=name)
 
 @app.route("/news6")
 def news6():
-    return render_template("news6.html")
+    name = session["username"]
+    return render_template("news6.html", name=name)
 
 @app.route("/news7")
 def news7():
-    return render_template("news7.html")
+    name = session["username"]
+    return render_template("news7.html", name=name)
 
 @app.route("/news8")
 def news8():
-    return render_template("news8.html")
+    name = session["username"]
+    return render_template("news8.html", name=name)
 
 
 @app.route("/profile", methods=["POST", "GET"])
 def profile():
     if request.method == "POST":
+        name = session["username"]
         user_id = session["user_id"]
 
         card_number = request.form.get("card_number")
@@ -171,5 +180,5 @@ def profile():
 
     else:
         user_id = session["user_id"]
-        name = db.execute("SELECT username FROM users WHERE id=?", user_id)[0]["username"]
+        name = session["username"]
         return render_template("profile.html", name = name)
