@@ -150,10 +150,12 @@
             <input type="text" autocomplete="off" name="username" placeholder="Username">
             <span class="input-icon"><i class="far fa-user-circle"></i></span>
           </div>
+          <p style="color: red;">{{ error }}</p>
           <div class="form-group">
             <input type="password"  autocomplete="off" name="password" placeholder="Password">
             <span class="input-icon"><i class="fas fa-user-lock"></i></span>
           </div>
+          <p style="color: red;">{{ error_pas }}</p>
           <button class="login-btn">Log in</button>
 
           <div class="seperator"><b>or</b></div>
