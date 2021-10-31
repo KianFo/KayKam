@@ -43,17 +43,19 @@ def login():
         name = request.form.get("username")
         password = request.form.get("password")
 
-        if not name:
-            return render_template("test1.html")
-        elif not password:
-            return render_template("test1.html")
 
+        if not name:
+            error = "Please enter a username"
+            return render_template("login.html", error=error)
+        if not password:
+            error_pas = "Please enter a password"
+            return render_template("login.html", error_pas=error_pas)
 
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
-
         # Ensure username exists and password is correct
         if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
-            return render_template("test1.html")
+            error_pas = "Your password is not correct !"
+            return render_template("login.html", error_pas=error_pas)
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
@@ -74,14 +76,34 @@ def register():
         pshash = generate_password_hash(password)
         confirm = request.form.get("confirmation")
 
+
         if not name:
-            return render_template("test1.html")
-        elif not password:
-            return render_template("test1.html")
-        elif not confirm:
-            return render_template("test1.html")
-        elif confirm != password:
-            return render_template("test1.html")
+            error = "Please enter a username"
+            return render_template("register.html", error=error)
+        if not password:
+            error_pas = "Please enter a password"
+            return render_template("register.html", error_pas=error_pas)
+        if not confirm:
+            error_confirm = "Please enter confirmation"
+            return render_template("register.html", error_confirm=error_confirm)
+
+
+        length = len(str(db.execute("SELECT * FROM users WHERE username =? ", name)))
+        if length > 2:
+            error = "This username has beeb already taken"
+            return render_template("register.html", error=error)
+
+
+        pas_length = len(str(password))
+        if pas_length < 4:
+            error_pas = "Your password should be at least 4 letters or numbers"
+            return render_template("register.html", error_pas=error_pas)
+
+
+        if confirm != password:
+            error_confirm = "Your confirmation in not the same as your password"
+            return render_template("register.html", error_confirm = error_confirm)
+
 
         try:
             db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", name, pshash)
