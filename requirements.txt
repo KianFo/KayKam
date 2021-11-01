@@ -1,0 +1,6 @@
+flask==1.1.4
+werkzeug==1.0.1
+cs50
+tempfile
+flask_session==0.4.0
+functools
