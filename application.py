@@ -80,12 +80,23 @@ def register():
         first_name = request.form.get("first_name")
         last_name = request.form.get("last_name")
 
+
+        if not first_name:
+            error_first = "Please enter first name"
+            return render_template("register.html", error_first=error_first)
+
+        if not last_name:
+            error_last = "Please enter lastname"
+            return render_template("register.html", error_last=error_last)
+
         if not name:
             error = "Please enter a username"
             return render_template("register.html", error=error)
+
         if not password:
             error_pas = "Please enter a password"
             return render_template("register.html", error_pas=error_pas)
+            
         if not confirm:
             error_confirm = "Please enter confirmation"
             return render_template("register.html", error_confirm=error_confirm)
