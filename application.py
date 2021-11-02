@@ -1,4 +1,4 @@
-from flask import Flask, flash, redirect, render_template, request, session
+from flask import Flask, redirect, render_template, request, session
 from werkzeug.security import check_password_hash, generate_password_hash
 from cs50 import SQL
 from tools import login_required
