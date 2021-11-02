@@ -90,7 +90,7 @@ def register():
 
         length = len(str(db.execute("SELECT * FROM users WHERE username =? ", name)))
         if length > 2:
-            error = "This username has beeb already taken"
+            error = "This username has been already taken"
             return render_template("register.html", error=error)
 
 
