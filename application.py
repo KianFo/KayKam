@@ -60,6 +60,8 @@ def login():
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
         session["username"] = rows[0]["username"]
+        session["first_name"] = rows[0]["first_name"]
+        session["last_name"] = rows[0]["last_name"]
         return redirect("/")
 
     else:
@@ -75,7 +77,8 @@ def register():
         password = request.form.get("password")
         pshash = generate_password_hash(password)
         confirm = request.form.get("confirmation")
-
+        first_name = request.form.get("first_name")
+        last_name = request.form.get("last_name")
 
         if not name:
             error = "Please enter a username"
@@ -106,7 +109,7 @@ def register():
 
 
         try:
-            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", name, pshash)
+            db.execute("INSERT INTO users (username, hash, first_name, last_name) VALUES (?, ?, ?, ?)", name, pshash, first_name, last_name)
         except:
             return render_template("test1.html")
 
@@ -187,6 +190,8 @@ def profile():
     if request.method == "POST":
         name = session["username"]
         user_id = session["user_id"]
+        first = session["first_name"]
+        last = session["last_name"]
 
         card_number = request.form.get("card_number")
         card_password = request.form.get("card_password")
@@ -203,4 +208,6 @@ def profile():
     else:
         user_id = session["user_id"]
         name = session["username"]
-        return render_template("profile.html", name = name)
+        first = session["first_name"]
+        last = session["last_name"]
+        return render_template("profile.html", name = name, first=first, last=last)
