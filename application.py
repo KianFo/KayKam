@@ -96,7 +96,7 @@ def register():
         if not password:
             error_pas = "Please enter a password"
             return render_template("register.html", error_pas=error_pas)
-            
+
         if not confirm:
             error_confirm = "Please enter confirmation"
             return render_template("register.html", error_confirm=error_confirm)
@@ -222,3 +222,72 @@ def profile():
         first = session["first_name"]
         last = session["last_name"]
         return render_template("profile.html", name = name, first=first, last=last)
+
+
+@app.route("/changepass", methods=["POST","GET"])
+def changepass():
+    if request.method == "POST":
+        new_name = request.form.get("new_pass")
+        new_confirm_pass = request.form.get("confirm_pass")
+
+    if not new_name:
+        error_pass = "Please enter your New Password"
+        return render_template("change_pass.html", error_pass=error_pass)
+    if not new_confirm_pass:
+        error_confirm = "Please enter confirmation"
+        return render_template("register.html", error_confirm=error_confirm)
+
+    else:
+        return render_template("change_pass.html")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

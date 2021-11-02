@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Change Password</title>
+    </head>
+    <body>
+        <div class="login-form" id="rcorners1" style="margin-top: 100px; margin-bottom: 140px;">
+          <form action="/register" method="POST">
+            <h1>Change Password</h1>
+            <div class="form-group">
+              <input type="text" autocomplete="off" name="new_pass" placeholder="New Password">
+              <span class="input-icon"><i class="far fa-user-circle"></i></span>
+              <p style="color: red;">{{ error_pass }}</p>
+            </div>
+            <div class="form-group">
+              <input type="text" autocomplete="off" name="confirm_pass" placeholder="Confirm New Password">
+              <span class="input-icon"><i class="far fa-user-circle"></i></span>
+              <p style="color: red;">{{ error_confirm }}</p>
+            </div>
+            <button class="login-btn">Submit</button>
+          </form>
+        </div>
+    </body>
+</html>
