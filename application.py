@@ -224,6 +224,7 @@ def profile():
         return render_template("profile.html", name = name, first=first, last=last)
 
 
+<<<<<<< HEAD
 @app.route("/changepass", methods=["POST","GET"])
 def changepass():
     if request.method == "POST":
@@ -248,6 +249,8 @@ def changepass():
 
     else:
         return render_template("change_pass.html")
+=======
+>>>>>>> 5e0f7e654cb4f9296189e379bcd41361b1813007
 
 
 
