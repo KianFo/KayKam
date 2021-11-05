@@ -229,6 +229,8 @@ def changepass():
     if request.method == "POST":
         name_new = request.form.get("pass_new")
         confirm_new = request.form.get("pass_confirm")
+        hashnew = generate_password_hash(name_new)
+        user_id = session["user_id"]
 
         if not name_new:
             error_pass = "Please enter New Password"
@@ -236,7 +238,12 @@ def changepass():
 
         if not confirm_new:
             error_confirm = "Please enter confirmation"
-        
+
+        try:
+            db.execute("UPDATE users SET hash=? WHERE id=?", hashnew, user_id)
+        except:
+            return render_template("test1.html")
+
         return redirect("/")
 
     else:
