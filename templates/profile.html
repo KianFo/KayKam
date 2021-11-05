@@ -67,7 +67,7 @@
               <a href="{{ url_for('credit') }}" class="btn btn-primary" style="margin-left: 50px; margin-bottom: 20px;">Create a credit card</a>
               <a href="#" class="btn btn-primary" style="margin-left: 50px; margin-bottom: 20px;">Charge your credit card</a>
             </div>
-            <a href="#" class="btn btn-outline-warning" style="margin-left: 50px;">Change your password</a>
+            <a href="{{ url_for('changepass') }}" class="btn btn-outline-warning" style="margin-left: 50px;">Change your password</a>
             <a href="#" class="btn btn-outline-success" style="margin-left: 50px;">Change your first/last name</a>
             <a style="margin-left: 50px;" href="{{ url_for('logout') }}" class="btn btn-danger">Log out</a>
         </div>

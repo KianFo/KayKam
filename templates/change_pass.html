@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <title>Create a credit card</title>
+        <title>Change Password</title>
         <script src="https://kit.fontawesome.com/8ae7c2e065.js" crossorigin="anonymous"></script>
         <style>
             body {
@@ -143,28 +143,21 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-      <div class="login-form" id="rcorners1" style="margin-top: 100px; margin-bottom: 140px;">
-        <form action="/credit" method="POST">
-          <h1>Create Your Credit Card</h1>
-          <span style="color: #34BE82"><i style="font-size: 70px; margin-left: 90px; margin-bottom: 30px; margin-right: 10px; color: #34BE82;" class="fas fa-dollar-sign"></i></span>
-          <span><i style="font-size: 100px; margin-bottom: 30px; color: #630000;" class="far fa-credit-card"></i></span>
-          <span style="color: #34BE82"><i style="font-size: 70px; margin-right: 80px; margin-bottom: 30px; margin-left: 10px;" class="fas fa-dollar-sign"></i></span>
-          <div class="form-group">
-            <input type="text"  autocomplete="off" name="credit_number" placeholder="Card Number">
-            <span class="input-icon"><i class="fas fa-pen-alt"></i></span>
-          </div>
-          <p style="color: red;">{{ error_pas }}</p>
-          <div class="form-group">
-            <input type="password"  autocomplete="off" name="password" placeholder=" Card Password">
-            <span class="input-icon"><i class="fas fa-user-lock"></i></span>
-          </div>
-          <p style="color: red;">{{ error_confirm }}</p>
-          <button class="login-btn">Register</button>
-
-          <div class="seperator"><b>or</b></div>
-          <a class="reset-psw" href="/login">Already have an account? Login here!</a>
-        </form>
-      </div>
-
+        <div class="login-form" id="rcorners1" style="margin-top: 100px; margin-bottom: 140px;">
+          <form action="/changepass" method="POST">
+            <h1>Change Password</h1>
+            <div class="form-group">
+              <input type="text" autocomplete="off" name="pass_new" placeholder="New Password">
+              <span class="input-icon"><i class="far fa-user-circle"></i></span>
+              <p style="color: red;">{{ error_pass }}</p>
+            </div>
+            <div class="form-group">
+              <input type="text" autocomplete="off" name="pass_confirm" placeholder="Confirm New Password">
+              <span class="input-icon"><i class="far fa-user-circle"></i></span>
+              <p style="color: red;">{{ error_confirm }}</p>
+            </div>
+            <button class="login-btn">Submit</button>
+          </form>
+        </div>
     </body>
 </html>

@@ -96,7 +96,7 @@ def register():
         if not password:
             error_pas = "Please enter a password"
             return render_template("register.html", error_pas=error_pas)
-            
+
         if not confirm:
             error_confirm = "Please enter confirmation"
             return render_template("register.html", error_confirm=error_confirm)
@@ -224,6 +224,31 @@ def profile():
         return render_template("profile.html", name = name, first=first, last=last)
 
 
+@app.route("/changepass", methods=["POST","GET"])
+def changepass():
+    if request.method == "POST":
+        name_new = request.form.get("pass_new")
+        confirm_new = request.form.get("pass_confirm")
+        hashnew = generate_password_hash(name_new)
+        user_id = session["user_id"]
+
+        if not name_new:
+            error_pass = "Please enter New Password"
+            return render_template("change_pass.html", error_pass=error_pass)
+
+        if not confirm_new:
+            error_confirm = "Please enter confirmation"
+
+        try:
+            db.execute("UPDATE users SET hash=? WHERE id=?", hashnew, user_id)
+        except:
+            return render_template("test1.html")
+
+        return redirect("/")
+
+    else:
+        return render_template("change_pass.html")
+
 
 
 
@@ -273,9 +298,10 @@ def credit():
         card_number = request.form.get("credit_number")
         card_password = request.form.get("password")
         owner = session["username"]
+        user_id = session["user_id"]
 
         try:
-            db.execute("INSERT INTO credit (name, card_number, card_password) VALUES (?, ?, ?)", owner, card_number, card_password)
+            db.execute("INSERT INTO credit (user_id, name, card_number, card_password) VALUES (?, ?, ?, ?)", user_id, owner, card_number, card_password)
         except:
             return render_template("test1.html")
 
