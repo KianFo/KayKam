@@ -224,23 +224,6 @@ def profile():
         return render_template("profile.html", name = name, first=first, last=last)
 
 
-@app.route("/changepass", methods=["POST","GET"])
-def changepass():
-    if request.method == "POST":
-        name_new = request.form.get("pass_new")
-        confirm_new = request.form.get("pass_confirm")
-
-        if not name_new:
-            error_pass = "Please enter New Password"
-            return render_template("change_pass.html", error_pass=error_pass)
-
-        if not confirm_new:
-            error_confirm = "Please enter confirmation"
-        
-        return redirect("/")
-
-    else:
-        return render_template("change_pass.html")
 
 
 
