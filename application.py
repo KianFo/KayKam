@@ -1,3 +1,4 @@
+import re
 from flask import Flask, redirect, render_template, request, session
 from werkzeug.security import check_password_hash, generate_password_hash
 from cs50 import SQL
@@ -296,7 +297,7 @@ def changepass():
 def credit():
     if request.method == "POST":
         card_number = request.form.get("credit_number")
-        card_password = request.form.get("password")
+        card_password = (request.form.get("password"))
         owner = session["username"]
         user_id = session["user_id"]
 
@@ -309,3 +310,30 @@ def credit():
 
     else:
         return render_template("credit.html")
+
+
+@app.route("/charge", methods=["POST", "GET"])
+def charge():
+    if request.method == "POST":
+        card_number = request.form.get("card_number")
+        password = (request.form.get("password"))
+        cash = int(request.form.get("cash"))
+        user_id = session["user_id"]
+        user = db.execute("SELECT * FROM credit WHERE card_number=?", card_number)
+        passw = user[0]["card_password"]
+        cash1 = int(user[0]["cash"])
+
+        rows = db.execute("SELECT * FROM credit WHERE card_number = ?", card_number)
+        # Ensure username exists and password is correct
+        if len(rows) != 1 or password != passw:
+            return render_template("test1.html")
+
+        try:
+            db.execute("UPDATE credit SET cash=? WHERE card_number=?", cash + cash1, card_number)
+        except:
+            return render_template("test1.html")
+
+        return redirect("/")
+
+    else:
+        return render_template("charge.html")

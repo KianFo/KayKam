@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Create a credit card</title>
+        <title>Charge your credit card</title>
         <script src="https://kit.fontawesome.com/8ae7c2e065.js" crossorigin="anonymous"></script>
         <style>
             body {
@@ -144,21 +144,20 @@
     </head>
     <body>
       <div class="login-form" id="rcorners1" style="margin-top: 100px; margin-bottom: 140px;">
-        <form action="/credit" method="POST">
-          <h1>Create Your Credit Card</h1>
-          <span style="color: #34BE82"><i style="font-size: 70px; margin-left: 90px; margin-bottom: 30px; margin-right: 10px; color: #34BE82;" class="fas fa-dollar-sign"></i></span>
-          <span><i style="font-size: 100px; margin-bottom: 30px; color: #630000;" class="far fa-credit-card"></i></span>
-          <span style="color: #34BE82"><i style="font-size: 70px; margin-right: 80px; margin-bottom: 30px; margin-left: 10px;" class="fas fa-dollar-sign"></i></span>
+        <form action="/charge" method="POST">
+          <h1>Charge Your Credit Card</h1>
           <div class="form-group">
-            <input type="text"  autocomplete="off" name="credit_number" placeholder="Card Number">
-            <span class="input-icon"><i class="fas fa-pen-alt"></i></span>
+            <input type="text"  autocomplete="off" name="card_number" placeholder="Card number">
+            <span class="input-icon"><i class="far fa-credit-card"></i></span>
           </div>
-          <p style="color: red;">{{ error_pas }}</p>
           <div class="form-group">
-            <input type="password"  autocomplete="off" name="password" placeholder=" Card Password">
+            <input type="password"  autocomplete="off" name="password" placeholder="Password">
             <span class="input-icon"><i class="fas fa-user-lock"></i></span>
           </div>
-          <p style="color: red;">{{ error_confirm }}</p>
+          <div class="form-group">
+            <input type="number"  autocomplete="off" name="cash" placeholder="Insert your amount of cash">
+            <span class="input-icon"><i class="fas fa-pen-alt"></i></span>
+          </div>
           <button class="login-btn">Register</button>
         </form>
       </div>
