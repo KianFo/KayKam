@@ -222,3 +222,64 @@ def profile():
         first = session["first_name"]
         last = session["last_name"]
         return render_template("profile.html", name = name, first=first, last=last)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@app.route("/credit", methods=["POST", "GET"])
+def credit():
+    if request.method == "POST":
+        card_number = request.form.get("credit_number")
+        card_password = request.form.get("password")
+        owner = session["username"]
+
+        try:
+            db.execute("INSERT INTO credit (name, card_number, card_password) VALUES (?, ?, ?)", owner, card_number, card_password)
+        except:
+            return render_template("test1.html")
+
+        return redirect("/")
+
+    else:
+        return render_template("credit.html")
