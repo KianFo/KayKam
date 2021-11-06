@@ -238,6 +238,7 @@ def changepass():
 
         if not confirm_new:
             error_confirm = "Please enter confirmation"
+            return render_template("change_pass.html", error_confirm=error_confirm)
 
         try:
             db.execute("UPDATE users SET hash=? WHERE id=?", hashnew, user_id)
@@ -248,6 +249,28 @@ def changepass():
 
     else:
         return render_template("change_pass.html")
+
+
+@app.route("/change_F_L", methods=["GET","POST"])
+def change_F_L():
+    if request.method == "POST":
+        first_name = request.form.get("pass_new")
+        last_name = request.form.get("last_name")
+        user_id = session["user_id"]
+        
+        try:
+            db.execute("UPDATE users SET first_name=? WHERE id=?", first_name, user_id)
+        except:
+            return render_template("test1.html")
+
+        try:
+            db.execute("UPDATE users SET last_name=? WHERE id=?", last_name, user_id)
+        except:
+            return render_template("test1.html")
+
+        return redirect("/")
+    else:
+        return render_template("change_F_L.html")
 
 
 
