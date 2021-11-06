@@ -307,7 +307,20 @@ def charge():
         cash1 = int(user[0]["cash"])
         newcash = cash + cash1
 
-        # Ensure username exists and password is correct
+        
+        if not card_number:
+            card_number = "Please enter your card number"
+            return render_template("charge.html", card_number=card_number)
+
+        if not password:
+            password = "Please enter your password"
+            return render_template("charge.html", password=password)
+
+        if not cash:
+            cash = "Please insert amount of cash you want"
+            return render_template("charge.html", cash=cash)
+
+
         if len(user) != 1 or not check_password_hash(passw, request.form.get("password")):
             return render_template("test1.html")
 
