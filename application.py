@@ -1,4 +1,3 @@
-import re
 from flask import Flask, redirect, render_template, request, session
 from werkzeug.security import check_password_hash, generate_password_hash
 from cs50 import SQL
@@ -300,9 +299,10 @@ def credit():
         card_password = (request.form.get("password"))
         owner = session["username"]
         user_id = session["user_id"]
+        pas = generate_password_hash(card_password)
 
         try:
-            db.execute("INSERT INTO credit (user_id, name, card_number, card_password) VALUES (?, ?, ?, ?)", user_id, owner, card_number, card_password)
+            db.execute("INSERT INTO credit (user_id, name, card_number, card_password) VALUES (?, ?, ?, ?)", user_id, owner, card_number, pas)
         except:
             return render_template("test1.html")
 
@@ -316,22 +316,21 @@ def credit():
 def charge():
     if request.method == "POST":
         card_number = request.form.get("card_number")
-        password = (request.form.get("password"))
+        password = request.form.get("password")
         cash = int(request.form.get("cash"))
-        user_id = session["user_id"]
         user = db.execute("SELECT * FROM credit WHERE card_number=?", card_number)
         passw = user[0]["card_password"]
         cash1 = int(user[0]["cash"])
+        newcash = cash + cash1
 
-        rows = db.execute("SELECT * FROM credit WHERE card_number = ?", card_number)
         # Ensure username exists and password is correct
-        if len(rows) != 1 or password != passw:
+        if len(user) != 1 or not check_password_hash(passw, request.form.get("password")):
             return render_template("test1.html")
 
         try:
-            db.execute("UPDATE credit SET cash=? WHERE card_number=?", cash + cash1, card_number)
+            db.execute("UPDATE credit SET cash=? WHERE card_number=?", newcash, card_number)
         except:
-            return render_template("test1.html")
+            return render_template("test.html")
 
         return redirect("/")
 
