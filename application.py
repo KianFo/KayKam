@@ -299,26 +299,42 @@ def credit():
 @app.route("/charge", methods=["POST", "GET"])
 def charge():
     if request.method == "POST":
-        card_number = request.form.get("card_number")
-        password = request.form.get("password")
-        cash = int(request.form.get("cash"))
+        try:
+            card_number = request.form.get("card_number")
+        except:
+            card_numbere = "Please enter your card number"
+            return render_template("charge.html", card_numbere=card_numbere)
+
+
+        try:
+            password = request.form.get("password")
+        except:
+            passworde = "Please enter your password"
+            return render_template("charge.html", passworde=passworde)
+
+
+        if not card_number:
+            card_numbere = "Please enter your card number"
+            return render_template("charge.html", card_numbere=card_numbere)
+
+        if not password:
+            passworde = "Please enter your password"
+            return render_template("charge.html", passworde=passworde)
+        
+
+        try:
+            cash = int(request.form.get("cash"))
+        except:
+            cashe = "Please insert amount of cash you want"
+            return render_template("charge.html", cashe=cashe)
+
+
+
         user = db.execute("SELECT * FROM credit WHERE card_number=?", card_number)
         passw = user[0]["card_password"]
         cash1 = int(user[0]["cash"])
         newcash = cash + cash1
 
-        
-        if not card_number:
-            card_number = "Please enter your card number"
-            return render_template("charge.html", card_number=card_number)
-
-        if not password:
-            password = "Please enter your password"
-            return render_template("charge.html", password=password)
-
-        if not cash:
-            cash = "Please insert amount of cash you want"
-            return render_template("charge.html", cash=cash)
 
 
         if len(user) != 1 or not check_password_hash(passw, request.form.get("password")):
