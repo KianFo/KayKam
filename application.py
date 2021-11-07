@@ -268,7 +268,7 @@ def change_F_L():
         except:
             return render_template("test1.html")
 
-        return redirect("/")
+        return redirect("/login")
     else:
         return render_template("change_F_L.html")
 
@@ -279,11 +279,45 @@ def change_F_L():
 @app.route("/credit", methods=["POST", "GET"])
 def credit():
     if request.method == "POST":
+    
+        try:
+            card_number = request.form.get("credit_number")
+        except:
+            card_numbere = "Please enter card number"
+            return render_template("credit.html", card_numbere=card_numbere)
+
+
+        try:
+            card_password = (request.form.get("password"))
+        except:
+            passworde = "Please enter your password"
+            return render_template("credit.html", passworde=passworde)
+
+        
+        if not card_number:
+            card_numbere = "Please enter card number"
+            return render_template("credit.html", card_numbere=card_numbere)
+
+        
+        if not card_password:
+            passworde = "Please enter your password"
+            return render_template("credit.html", passworde=passworde)
+
         card_number = request.form.get("credit_number")
         card_password = (request.form.get("password"))
         owner = session["username"]
         user_id = session["user_id"]
         pas = generate_password_hash(card_password)
+
+        
+        name2 = session["username"]
+
+        test_length = len(db.execute("SELECT name FROM credit WHERE card_number=?", card_number))
+
+        if test_length > 0:
+            card_numbere = "Card_number has already been taken"
+            return render_template("credit.html", card_numbere=card_numbere)
+
 
         try:
             db.execute("INSERT INTO credit (user_id, name, card_number, card_password) VALUES (?, ?, ?, ?)", user_id, owner, card_number, pas)
@@ -320,7 +354,18 @@ def charge():
         if not password:
             passworde = "Please enter your password"
             return render_template("charge.html", passworde=passworde)
+
+        card_number = request.form.get("card_number")
+        password = request.form.get("password")
         
+
+        name2 = session["username"]
+
+        test_length = len(db.execute("SELECT card_number FROM credit WHERE name=?", name2))
+
+        if test_length == 1:
+            card_numbere = "Card_number invalid"
+            return render_template("charge.html", card_numbere=card_numbere)
 
         try:
             cash = int(request.form.get("cash"))
