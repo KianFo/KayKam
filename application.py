@@ -245,7 +245,9 @@ def changepass():
         except:
             return render_template("test1.html")
 
-        return redirect("/")
+        session.clear()
+
+        return redirect("/login")
 
     else:
         return render_template("change_pass.html")
@@ -268,7 +270,9 @@ def change_F_L():
         except:
             return render_template("test1.html")
 
-        return redirect("/")
+        session.clear()
+
+        return redirect("/login")
     else:
         return render_template("change_F_L.html")
 
@@ -290,7 +294,11 @@ def credit():
         except:
             return render_template("test1.html")
 
-        return redirect("/")
+        message = "You successfully created an account, by deffault you have an amount of"
+
+        cash = 150
+
+        return render_template("raw.html", message=message, cash=cash)
 
     else:
         return render_template("credit.html")
@@ -345,7 +353,9 @@ def charge():
         except:
             return render_template("test.html")
 
-        return redirect("/")
+        message = "Your card is successfully charged by"
+
+        return render_template("raw.html", message=message, cash=cash)
 
     else:
         return render_template("charge.html")
