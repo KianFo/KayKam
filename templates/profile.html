@@ -58,6 +58,29 @@
             window.setInterval(blink, 400);
         </script>
         <title>Barca!</title>
+        <style>
+           .seperator {
+              float: left;
+              width: 100%;
+              border-top: 1px solid #ccc;
+              text-align: center;
+              margin: 50px 0 0;
+            }
+            .seperator b{
+              width: 40px;
+              height: 40px;
+              font-size: 16px;
+              text-align: center;
+              line-height: 40px;
+              background: #fff;
+              display: inline-block;
+              border: 1px solid #e0e0e0;
+              border-radius: 50%;
+              position: relative;
+              top: -22px;
+              z-index: 1;
+            }
+        </style>
         <link href="static/style.css" rel="stylesheet">
     </head>
     <body style="background-color: #0C7B93;">
@@ -67,9 +90,11 @@
             <h1 style="margin-left: 50px;">First Name: <span style="font-size: 60px;">{{ first }}</span></h1>
             <h1 style="margin-left: 50px;">Last Name: <span style="font-size: 60px;">{{ last }}</span></h1>
             <div>
+              <div class="seperator"><b><i class="far fa-credit-card"></i></b></div>
               <a href="{{ url_for('credit') }}" class="btn btn-primary butc kbut" style="margin-left: 50px; margin-bottom: 20px;">Create a credit card</a>
               <a href="{{ url_for('charge') }}" class="btn btn-primary butc kbut" style="margin-left: 50px; margin-bottom: 20px;">Charge your credit card</a>
             </div>
+            <div class="seperator"><b><i class="fa fa-user-circle-o" aria-hidden="true"></i></b></div>
             <a href="{{ url_for('changepass') }}" class="btn btn-primary butc kbut" style="margin-left: 50px;">Change your password</a>
             <a href="{{ url_for('change_F_L') }}" class="btn btn-primary butc kbut" style="margin-left: 25px;">Change your first / last name</a>
             <a style="margin-left: 70px;" href="{{ url_for('logout') }}" class="btn btn-danger">Log out</a>
