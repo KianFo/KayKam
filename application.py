@@ -404,3 +404,13 @@ def charge():
 
     else:
         return render_template("charge.html")
+
+
+
+@app.route("/shop", methods=["POST", "GET"])
+def shop():
+    if request.method == "POST":
+        pass
+
+    else:
+        return render_template("shop.html")
