@@ -156,8 +156,13 @@
               <span class="input-icon"><i class="far fa-user-circle"></i></span>
               <p style="color: red;">{{ error_confirm }}</p>
             </div>
-            <button class="login-btn">Submit</button>
+            <button class="login-btn" id="alert" >Submit</button>
           </form>
         </div>
     </body>
+    <script>
+        document.querySelector('#alert').onclick = function() {
+               alert("The operation was seccessful, in order to confirm your changes, please login again!") 
+            }
+    </script>
 </html>

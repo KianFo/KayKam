@@ -530,9 +530,24 @@ footer button.show{
     margin-top:20px;
 }
 
+.kbut {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 15px;
+}
 
+.butc {
+    background-color:#2FDD92;
+    border: #2FDD92;
+    color: #364F6B;
+}
 
-
+.butc:hover {
+    background-color:#34BE82;
+    border: #34BE82;
+}
 
 
 
