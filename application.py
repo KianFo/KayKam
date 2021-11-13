@@ -410,7 +410,7 @@ def charge():
 @app.route("/shop", methods=["POST", "GET"])
 def shop():
     number1 = 0
-    if request.method == "POST":
+    if request.method == "POST1":
         id = request.form.get("id")
         user_id = session["user_id"]
 
