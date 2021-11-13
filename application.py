@@ -409,27 +409,7 @@ def charge():
 
 @app.route("/shop", methods=["POST", "GET"])
 def shop():
-    number1 = 0
-
-    if request.method == "POST1":
-        id = request.form.get("id")
-        user_id = session["user_id"]
-
-        try:
-            length = len(db.execute("SELECT * FROM cart WHERE id=? AND user_id=?", id, user_id))
-        except:
-            return render_template("")
-
-        try:
-            number1 += 1
-            db.execute("INSERT INTO cart (user_id, id, number) VALUES (?, ?, ?)", user_id, id, number1)
-        except:
-            return render_template("test1")
-
-        return redirect("/shop")
-
-    else:
-        return render_template("shop.html")
+    return render_template("shop.html")
 
 @app.route("/product1", methods=["GET", "POST"])
 def product1():
