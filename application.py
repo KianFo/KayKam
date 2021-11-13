@@ -409,8 +409,18 @@ def charge():
 
 @app.route("/shop", methods=["POST", "GET"])
 def shop():
+    number1 = 0
     if request.method == "POST":
-        pass
+        id = request.form.get("id")
+        user_id = session["user_id"]
+
+        try:
+            db.execute("INSERT INTO cart (user_id, id, number) VALUES (?, ?, ?)", user_id, id, number1)
+            number1 += 1
+        except:
+            return render_template("test1")
+
+        return redirect("/shop")
 
     else:
         return render_template("shop.html")
