@@ -416,5 +416,4 @@ def product1():
     if request.method == "POST":
         pass
 
-    else:
-        return render_template("product1.html")
+    return render_template("shop.html")
