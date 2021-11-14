@@ -409,37 +409,250 @@ def charge():
 
 @app.route("/shop", methods=["POST", "GET"])
 def shop():
-
     return render_template("shop.html")
 
 
 
+
+#\@app.route("/product1", methods=["GET", "POST"])
+#def product1():
+    #if request.method == "POST":
+
+        #id = request.form.get("id")
+        #user_id = session["user_id"]
+
+        
+        #test_length = len(db.execute("SELECT number FROM cart WHERE pid=? AND user_id=?", id, user_id))
+        
+        #if test_length == 0:
+
+            #try:
+                #db.execute("INSERT INTO cart (user_id, pid, number) VALUES (?, ?, ?)", user_id, id, 1)
+            #except:
+                #return render_template("test1")
+
+        #else:
+            #try:
+                #number1 = db.execute("SELECT number FROM cart WHERE pid=? AND user_id=?", id, user_id)
+                #number1 += 1
+                #db.execute("UPDATE cart SET number=? WHERE user_id=? AND pid=?", number1, user_id, id)
+            #except:
+                #return render_template("test1.html")
+
+        #return redirect
+
 @app.route("/product1", methods=["GET", "POST"])
 def product1():
     if request.method == "POST":
-
-        id = request.form.get("id")
-        user_id = session["user_id"]
-
-        
-        test_length = len(db.execute("SELECT number FROM cart WHERE pid=? AND user_id=?", id, user_id))
-        
-        if test_length == 0:
-
-            try:
-                db.execute("INSERT INTO cart (user_id, pid, number) VALUES (?, ?, ?)", user_id, id, 1)
-            except:
-                return render_template("test1")
-
-        else:
-            try:
-                number1 = db.execute("SELECT number FROM cart WHERE pid=? AND user_id=?", id, user_id)
-                number1 += 1
-                db.execute("UPDATE cart SET number=? WHERE user_id=? AND pid=?", number1, user_id, id)
-            except:
-                return render_template("test1.html")
-
-        return redirect
+        pass
 
     else:
         return render_template("product1.html")
+
+
+
+@app.route("/product2", methods=["GET", "POST"])
+def product2():
+    if request.method == "POST":
+        pass
+
+    else:
+        return render_template("product2.html")
+
+
+
+@app.route("/product3", methods=["GET", "POST"])
+def product3():
+    if request.method == "POST":
+        pass
+
+    else:
+        return render_template("product3.html")
+
+
+
+@app.route("/product4", methods=["GET", "POST"])
+def product4():
+    if request.method == "POST":
+        pass
+
+    else:
+        return render_template("product4.html")
+
+
+
+@app.route("/product5", methods=["GET", "POST"])
+def product5():
+    if request.method == "POST":
+        pass
+
+    else:
+        return render_template("product5.html")
+
+
+
+@app.route("/product6", methods=["GET", "POST"])
+def product6():
+    if request.method == "POST":
+        pass
+
+    else:
+        return render_template("product6.html")
+
+
+
+@app.route("/product7", methods=["GET", "POST"])
+def product7():
+    if request.method == "POST":
+        pass
+
+    else:
+        return render_template("product7.html")
+
+
+
+@app.route("/product8", methods=["GET", "POST"])
+def product8():
+    if request.method == "POST":
+        pass
+
+    else:
+        return render_template("product8.html")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
