@@ -412,28 +412,34 @@ def shop():
 
     return render_template("shop.html")
 
-    
+
 
 @app.route("/product1", methods=["GET", "POST"])
 def product1():
     if request.method == "POST":
-            number1 = 0
 
-    if request.method == "POST1":
         id = request.form.get("id")
         user_id = session["user_id"]
 
-        try:
-            test_length = len(db.execute("SELECT * FROM cart WHERE id=? AND user_id=?", id, user_id))
-            return render_template("iner.hmtl", test_length=test_length)
-        except:
-            return render_template("test1.html")
+        
+        test_length = len(db.execute("SELECT number FROM cart WHERE pid=? AND user_id=?", id, user_id))
+        
+        if test_length == 0:
 
-        try:
-            number1 += 1
-            db.execute("INSERT INTO cart (user_id, id, number) VALUES (?, ?, ?)", user_id, id, number1)
-        except:
-            return render_template("test1")
+            try:
+                db.execute("INSERT INTO cart (user_id, pid, number) VALUES (?, ?, ?)", user_id, id, 1)
+            except:
+                return render_template("test1")
+
+        else:
+            try:
+                number1 = db.execute("SELECT number FROM cart WHERE pid=? AND user_id=?", id, user_id)
+                number1 += 1
+                db.execute("UPDATE cart SET number=? WHERE user_id=? AND pid=?", number1, user_id, id)
+            except:
+                return render_template("test1.html")
+
+        return redirect
 
     else:
         return render_template("product1.html")
