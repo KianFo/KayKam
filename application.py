@@ -409,6 +409,8 @@ def charge():
 
 @app.route("/shop", methods=["POST", "GET"])
 def shop():
+    if request.method == "POST":
+        return render_template("test1")
     return render_template("shop.html")
 
 
