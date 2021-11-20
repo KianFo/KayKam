@@ -554,9 +554,20 @@ footer button.show{
     margin-right: 200px;  
 }
 
+.shopbut {
+    background-color: #3D0000;
+}
 
+.touch {
+    background-color: #950101;
+    border: #3D0000;
+    color: #364F6B;
+}
 
-
+.touch:hover {
+    background-color: #3D0000;
+    border: #3D0000;
+}
 
 
 
