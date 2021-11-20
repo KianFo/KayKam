@@ -446,7 +446,7 @@ def shop():
 @app.route("/product1", methods=["GET", "POST"])
 def product1():
     if request.method == "POST":
-        pass
+        id = request
 
     else:
         return render_template("product1.html")
