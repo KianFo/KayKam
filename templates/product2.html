@@ -1,14 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Shop</title>
+        <script src="https://kit.fontawesome.com/2567c797c7.js" crossorigin="anonymous"></script>
+        <title>News</title>
+        <nav class="navbar navbar-expand-lg navbar_index">
+            <div class="container-fluid">
+
+              <a class="navbar-brand blue barca_gold" style="font-size: 45px;" id="blink">Barca!</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link navbar_grey" style="font-size: 25px;" href="{{ url_for('index') }}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navbar_grey" style="font-size: 25px;" href="{{ url_for('news') }}">News</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navbar_grey" style="font-size: 25px;" href="{{ url_for('quize') }}" >Quiz</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navbar_grey" style="font-size: 25px;" href="{{ url_for('profile') }}">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navbar_grey" style="font-size: 25px;" href="{{ url_for('shop') }}">Shop</a>
+                  </li>
+                  <li>
+                    <span style="font-size: 25px; margin-left: 450px; margin-right: 20px;">signed in as<i style="font-size: 55px; margin-left: 20px; color: #171010;" class="fas fa-user-astronaut"></i></span>
+                    <span style="font-size: 30px; color: #700B97;">{{ name }}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <script>
+          function blink()
+            {
+                let body = document.querySelector('#blink');
+                if (body.style.color == 'blue')
+                {
+                    body.style.color = 'red';
+                }
+                else
+                {
+                    body.style.color = 'blue';
+                }
+            }
+
+            // Blink every 500ms
+            window.setInterval(blink, 400);
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link href="static/style.css" rel="stylesheet">
     </head>
     <body>
-        <h1>barca home kit</h1>
-        <form action="/product2" method="POST">
-          <input name="id" type="hidden" value="2">
-          <input type="submit" id="b1" value="add to cart">
-        </form>
+        {% block body %}
+        {% endblock %}
     </body>
 </html>
-
