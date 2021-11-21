@@ -456,7 +456,23 @@ def product1():
 @app.route("/product2", methods=["GET", "POST"])
 def product2():
     if request.method == "POST":
-        pass
+
+        user_id = session["user_id"]
+        number = request.form.get("number")
+        pid = request.form.get("id")
+
+        return render_template("iner.html", a=user_id, b=number, c=pid)
+
+        # db.execute("INSERT INTO credit (user_id, name, card_number, card_password) VALUES (?, ?, ?, ?)", user_id, owner, card_number, pas)
+
+        cart_length = db.execute("")
+
+        return render_template("iner.html")
+
+        try:
+            db.execute("INSERT INTO cart (user_id, pid, number) VALUES (?, ?, ?)", user_id, pid, number)
+        except:
+            return render_template("test1.html")
 
     else:
         return render_template("product2.html")
