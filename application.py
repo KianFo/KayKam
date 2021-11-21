@@ -461,18 +461,33 @@ def product2():
         number = request.form.get("number")
         pid = request.form.get("id")
 
-        return render_template("iner.html", a=user_id, b=number, c=pid)
 
         # db.execute("INSERT INTO credit (user_id, name, card_number, card_password) VALUES (?, ?, ?, ?)", user_id, owner, card_number, pas)
 
-        cart_length = db.execute("")
+        kiankhar = 64
 
-        return render_template("iner.html")
+        cart_length = len(db.execute("SELECT * FROM cart WHERE user_id=?", user_id))
 
+#        return render_template("iner.html", a=user_id, b=number, c=pid, d=cart_length)
+        if cart_length != 0:
+            try:
+                db.execute("UPDATE cart SET number=? WHERE user_id=? AND pid=?", number, user_id, pid)
+            except:
+                return render_template("test1.html")
+
+            return redirect("/shop")
+#        return render_template("iner.html")
         try:
             db.execute("INSERT INTO cart (user_id, pid, number) VALUES (?, ?, ?)", user_id, pid, number)
         except:
             return render_template("test1.html")
+#        try:
+ #           db.execute("INSERT INTO cart (user_id, pid, number) VALUES (?, ?, ?)", user_id, pid, number)
+#        except:
+        return redirect("/shop")
+#            return render_template("test1.html")
+
+#        return redirect("/")
 
     else:
         return render_template("product2.html")
