@@ -79,9 +79,11 @@
                         <p class="card-text centered">Xavi: It's my goal and dream to coach barcelona.</p>
                         <form action="/shop" method="POST" style="margin-right: 200px;">
                           <div class="form-group">
-                            <input type="number" name="number" placeholder="  How many?" style="border-radius: 10px;">
-                            <input type="hidden" value="1" name="id">
-                            <input type="submit" value="Add to cart" class="btn btn-primary" style="font-size: 10px; border-radius: 20px; background-color: #950101;">
+                            <select id="inputState" class="form-control">
+                              <option selected>Choose...</option>
+                              <option>...</option>
+                            </select>
+                            <input type="submit" value="Add to cart" class="btn btn-success" style="margin-top: 30px;">
                           </div> 
                         </form>
                         <a href="{{ url_for('product1') }}" class="btn btn-primary" style="margin-right: 200px;">Full Report</a>
