@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <title>News</title>
+        <script src="https://kit.fontawesome.com/2567c797c7.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -59,9 +60,8 @@
     </head>
     <body style="background-color: #393E46;"">
       <div id="rcorners1" style="background-color: white; margin-left: 300px; margin-top: 65px; margin-right: 300px;">
-        <h1 style="text-align: center; margin-top: 12px;">hellllllllllllllllooooooooo</h1>
-        <p style="color: white;">.</p>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <h1 style="text-align: center; margin-top: 12px; margin-bottom: 12px;">hellllllllllllllllooooooooo</h1>
+        <div id="carouselExampleIndicators" class="carousel slide bordera" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -69,13 +69,13 @@
           </ol>
           <div class="carousel-inner" style="width: 60rem; margin-left: 160px;">
             <div class="carousel-item active">
-              <img src="https://hdwallpaperim.com/wp-content/uploads/2017/08/27/144722-Barcelona-FC_Barcelona-stadium-Camp_Nou.jpg" class="d-block w-100" alt="...">
+              <img src="https://hdwallpaperim.com/wp-content/uploads/2017/08/27/144722-Barcelona-FC_Barcelona-stadium-Camp_Nou.jpg" class="d-block w-100 bordera" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="https://hdwallpaperim.com/wp-content/uploads/2017/08/27/144722-Barcelona-FC_Barcelona-stadium-Camp_Nou.jpg" class="d-block w-100" alt="...">
+              <img src="https://www.soccerbible.com/media/103023/barca-locker-room.jpg" class="d-block w-100 bordera" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="https://hdwallpaperim.com/wp-content/uploads/2017/08/27/144722-Barcelona-FC_Barcelona-stadium-Camp_Nou.jpg" class="d-block w-100" alt="...">
+              <img src="https://hdwallpaperim.com/wp-content/uploads/2017/08/27/144722-Barcelona-FC_Barcelona-stadium-Camp_Nou.jpg" class="d-block w-100 bordera" alt="...">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -88,12 +88,75 @@
           </a>
         </div>
         <form action="/product2" method="POST" style="margin-right: 200px;">
-          <div class="form-group">
-            <input type="number" name="number" placeholder="  How many?" style="border-radius: 10px;">
-            <input type="hidden" value="2" name="id">
-            <input type="submit" value="Add to cart" class="btn btn-primary" style="font-size: 10px; border-radius: 20px; background-color: #950101;">
-          </div> 
-        </form>
+        <div style="margin-left: 325px; margin-top: 20px; width: 40rem; margin-right: 325px;">                  
+          <select id="inputState" name="number" class="form-control" style="text-align: center; font-size: 35px; border-radius: 30px;">
+            <option style="font-size: 20px; text-align: center;" class="centering" selected>How many?</option>
+            <option style="text-align: center; font-size: 20px;" class="centering">1</option>
+            <option style="text-align: center; font-size: 20px;">2</option>
+            <option style="text-align: center; font-size: 20px;">3</option>
+            <option style="text-align: center; font-size: 20px;">4</option>
+            <option style="text-align: center; font-size: 20px;">5</option>
+            <option style="text-align: center; font-size: 20px;">6</option>
+            <option style="text-align: center; font-size: 20px;">7</option>
+          </select>
+          <input type="hidden" value="2" name="id">
+          <input type="submit" value="Add to cart" class="btn btn-success" style="margin-top: 10px; margin-bottom: 20px; margin-left: 220px; margin-right: 260px; font-size: 30px; padding-left: 30px; padding-right: 30px;">
+        </div>   
+      </form>
+      </div>
+      <div id="rcorners1" style="background-color: white; margin-left: 300px; margin-top: 65px; margin-right: 300px;">
+        <table class="table table-striped bordera" style="border-radius: 20px;">
+          <thead class="thead-dark bordera">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody class="bordera">
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>kiyan</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-striped table-dark" style="border-radius: 20px;">
+          <tbody class="bordera">
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </body>
 </html>

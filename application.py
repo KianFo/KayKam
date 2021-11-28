@@ -410,8 +410,13 @@ def charge():
 @app.route("/shop", methods=["POST", "GET"])
 def shop():
     if request.method == "POST":
+        user_id = session["user_id"]
+        name = session["user_name"]
         return render_template("test1")
-    return render_template("shop.html")
+    
+    else:
+        name = session["username"]
+        return render_template("shop.html", name=name)
 
 
 
@@ -460,6 +465,7 @@ def product2():
         user_id = session["user_id"]
         number = request.form.get("number")
         pid = request.form.get("id")
+        name = session["username"]
 
 
         # db.execute("INSERT INTO credit (user_id, name, card_number, card_password) VALUES (?, ?, ?, ?)", user_id, owner, card_number, pas)
@@ -490,7 +496,8 @@ def product2():
 #        return redirect("/")
 
     else:
-        return render_template("product2.html")
+        name = session["username"]
+        return render_template("product2.html", name=name)
 
 
 

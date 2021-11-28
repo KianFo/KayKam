@@ -569,9 +569,14 @@ footer button.show{
     border: #3D0000;
 }
 
+.centering {
+    text-align: center;
+    align-items: center;
+}
 
-
-
+.bordera {
+    border-radius: 20px;
+}
 
 
 
