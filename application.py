@@ -448,18 +448,16 @@ def shop():
 
         #return redirect
 
+
+
+
+
+
+
+
+
 @app.route("/product1", methods=["GET", "POST"])
 def product1():
-    if request.method == "POST":
-        id = request
-
-    else:
-        return render_template("product1.html")
-
-
-
-@app.route("/product2", methods=["GET", "POST"])
-def product2():
     if request.method == "POST":
 
         user_id = session["user_id"]
@@ -468,11 +466,17 @@ def product2():
         name = session["username"]
 
 
+        if request.form.get("number") == "How many?":
+            return render_template("product1.html")     ################
+
+#        return render_template("iner.html", a=user_id, b=number, c=pid, d=name)
+
+
         # db.execute("INSERT INTO credit (user_id, name, card_number, card_password) VALUES (?, ?, ?, ?)", user_id, owner, card_number, pas)
 
         kiankhar = 64
 
-        cart_length = len(db.execute("SELECT * FROM cart WHERE user_id=?", user_id))
+        cart_length = len(db.execute("SELECT * FROM cart WHERE user_id=? AND pid=?", user_id, pid))
 
 #        return render_template("iner.html", a=user_id, b=number, c=pid, d=cart_length)
         if cart_length != 0:
@@ -497,67 +501,293 @@ def product2():
 
     else:
         name = session["username"]
-        return render_template("product2.html", name=name)
+        return render_template("product1.html", name=name)          ###################
+
+
+
+
+
+
+
+
+
+
+
+@app.route("/product2", methods=["GET", "POST"])
+def product2():
+    if request.method == "POST":
+
+        user_id = session["user_id"]
+        number = request.form.get("number")
+        pid = request.form.get("id")
+        name = session["username"]
+
+
+        if request.form.get("number") == "How many?":
+            return render_template("product2.html")     ################
+
+        return render_template("iner.html", a=user_id, b=number, c=pid, d=name)
+
+
+        # db.execute("INSERT INTO credit (user_id, name, card_number, card_password) VALUES (?, ?, ?, ?)", user_id, owner, card_number, pas)
+
+        kiankhar = 64
+
+        cart_length = len(db.execute("SELECT * FROM cart WHERE user_id=? AND pid=?", user_id, pid))
+
+#        return render_template("iner.html", a=user_id, b=number, c=pid, d=cart_length)
+        if cart_length != 0:
+            try:
+                db.execute("UPDATE cart SET number=? WHERE user_id=? AND pid=?", number, user_id, pid)
+            except:
+                return render_template("test1.html")
+
+            return redirect("/shop")
+#        return render_template("iner.html")
+        try:
+            db.execute("INSERT INTO cart (user_id, pid, number) VALUES (?, ?, ?)", user_id, pid, number)
+        except:
+            return render_template("test1.html")
+#        try:
+ #           db.execute("INSERT INTO cart (user_id, pid, number) VALUES (?, ?, ?)", user_id, pid, number)
+#        except:
+        return redirect("/shop")
+#            return render_template("test1.html")
+
+#        return redirect("/")
+
+    else:
+        name = session["username"]
+        return render_template("product2.html", name=name)          ###################
+
+
+
+
+
+
+
+
+
 
 
 
 @app.route("/product3", methods=["GET", "POST"])
 def product3():
     if request.method == "POST":
-        pass
+
+        user_id = session["user_id"]
+        number = request.form.get("number")
+        pid = request.form.get("id")
+        name = session["username"]
+
+
+        if request.form.get("number") == "How many?":
+            return render_template("product3.html")     ################
+
+#        return render_template("iner.html", a=user_id, b=number, c=pid, d=name)
+
+
+        # db.execute("INSERT INTO credit (user_id, name, card_number, card_password) VALUES (?, ?, ?, ?)", user_id, owner, card_number, pas)
+
+        kiankhar = 64
+
+        cart_length = len(db.execute("SELECT * FROM cart WHERE user_id=? AND pid=?", user_id, pid))
+
+#        return render_template("iner.html", a=user_id, b=number, c=pid, d=cart_length)
+        if cart_length != 0:
+            try:
+                db.execute("UPDATE cart SET number=? WHERE user_id=? AND pid=?", number, user_id, pid)
+            except:
+                return render_template("test1.html")
+
+            return redirect("/shop")
+#        return render_template("iner.html")
+        try:
+            db.execute("INSERT INTO cart (user_id, pid, number) VALUES (?, ?, ?)", user_id, pid, number)
+        except:
+            return render_template("test1.html")
+#        try:
+ #           db.execute("INSERT INTO cart (user_id, pid, number) VALUES (?, ?, ?)", user_id, pid, number)
+#        except:
+        return redirect("/shop")
+#            return render_template("test1.html")
+
+#        return redirect("/")
 
     else:
-        return render_template("product3.html")
+        name = session["username"]
+        return render_template("product3.html", name=name)          ###################
+
+
+
+
+
+
+
+
+
 
 
 
 @app.route("/product4", methods=["GET", "POST"])
 def product4():
     if request.method == "POST":
-        pass
+
+        user_id = session["user_id"]
+        number = request.form.get("number")
+        pid = request.form.get("id")
+        name = session["username"]
+
+
+        if request.form.get("number") == "How many?":
+            return render_template("product4.html")     ################
+
+#        return render_template("iner.html", a=user_id, b=number, c=pid, d=name)
+
+
+        # db.execute("INSERT INTO credit (user_id, name, card_number, card_password) VALUES (?, ?, ?, ?)", user_id, owner, card_number, pas)
+
+        kiankhar = 64
+
+        cart_length = len(db.execute("SELECT * FROM cart WHERE user_id=? AND pid=?", user_id, pid))
+
+#        return render_template("iner.html", a=user_id, b=number, c=pid, d=cart_length)
+        if cart_length != 0:
+            try:
+                db.execute("UPDATE cart SET number=? WHERE user_id=? AND pid=?", number, user_id, pid)
+            except:
+                return render_template("test1.html")
+
+            return redirect("/shop")
+#        return render_template("iner.html")
+        try:
+            db.execute("INSERT INTO cart (user_id, pid, number) VALUES (?, ?, ?)", user_id, pid, number)
+        except:
+            return render_template("test1.html")
+#        try:
+ #           db.execute("INSERT INTO cart (user_id, pid, number) VALUES (?, ?, ?)", user_id, pid, number)
+#        except:
+        return redirect("/shop")
+#            return render_template("test1.html")
+
+#        return redirect("/")
 
     else:
-        return render_template("product4.html")
+        name = session["username"]
+        return render_template("product4.html", name=name)          ###################
+
+
+
+
+
+
+
 
 
 
 @app.route("/product5", methods=["GET", "POST"])
 def product5():
     if request.method == "POST":
-        pass
+
+        user_id = session["user_id"]
+        number = request.form.get("number")
+        pid = request.form.get("id")
+        name = session["username"]
+
+
+        if request.form.get("number") == "How many?":
+            return render_template("product5.html")     ################
+
+#        return render_template("iner.html", a=user_id, b=number, c=pid, d=name)
+
+
+        # db.execute("INSERT INTO credit (user_id, name, card_number, card_password) VALUES (?, ?, ?, ?)", user_id, owner, card_number, pas)
+
+        kiankhar = 64
+
+        cart_length = len(db.execute("SELECT * FROM cart WHERE user_id=? AND pid=?", user_id, pid))
+
+#        return render_template("iner.html", a=user_id, b=number, c=pid, d=cart_length)
+        if cart_length != 0:
+            try:
+                db.execute("UPDATE cart SET number=? WHERE user_id=? AND pid=?", number, user_id, pid)
+            except:
+                return render_template("test1.html")
+
+            return redirect("/shop")
+#        return render_template("iner.html")
+        try:
+            db.execute("INSERT INTO cart (user_id, pid, number) VALUES (?, ?, ?)", user_id, pid, number)
+        except:
+            return render_template("test1.html")
+#        try:
+ #           db.execute("INSERT INTO cart (user_id, pid, number) VALUES (?, ?, ?)", user_id, pid, number)
+#        except:
+        return redirect("/shop")
+#            return render_template("test1.html")
+
+#        return redirect("/")
 
     else:
-        return render_template("product5.html")
+        name = session["username"]
+        return render_template("product5.html", name=name)          ###################
+
+
+
+
+
+
+
 
 
 
 @app.route("/product6", methods=["GET", "POST"])
 def product6():
     if request.method == "POST":
-        pass
+
+        user_id = session["user_id"]
+        number = request.form.get("number")
+        pid = request.form.get("id")
+        name = session["username"]
+
+
+        if request.form.get("number") == "How many?":
+            return render_template("product6.html")     ################
+
+#        return render_template("iner.html", a=user_id, b=number, c=pid, d=name)
+
+
+        # db.execute("INSERT INTO credit (user_id, name, card_number, card_password) VALUES (?, ?, ?, ?)", user_id, owner, card_number, pas)
+
+        kiankhar = 64
+
+        cart_length = len(db.execute("SELECT * FROM cart WHERE user_id=? AND pid=?", user_id, pid))
+
+#        return render_template("iner.html", a=user_id, b=number, c=pid, d=cart_length)
+        if cart_length != 0:
+            try:
+                db.execute("UPDATE cart SET number=? WHERE user_id=? AND pid=?", number, user_id, pid)
+            except:
+                return render_template("test1.html")
+
+            return redirect("/shop")
+#        return render_template("iner.html")
+        try:
+            db.execute("INSERT INTO cart (user_id, pid, number) VALUES (?, ?, ?)", user_id, pid, number)
+        except:
+            return render_template("test1.html")
+#        try:
+ #           db.execute("INSERT INTO cart (user_id, pid, number) VALUES (?, ?, ?)", user_id, pid, number)
+#        except:
+        return redirect("/shop")
+#            return render_template("test1.html")
+
+#        return redirect("/")
 
     else:
-        return render_template("product6.html")
+        name = session["username"]
+        return render_template("product6.html", name=name)          ###################
 
-
-
-@app.route("/product7", methods=["GET", "POST"])
-def product7():
-    if request.method == "POST":
-        pass
-
-    else:
-        return render_template("product7.html")
-
-
-
-@app.route("/product8", methods=["GET", "POST"])
-def product8():
-    if request.method == "POST":
-        pass
-
-    else:
-        return render_template("product8.html")
 
 
 
