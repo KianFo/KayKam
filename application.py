@@ -809,8 +809,9 @@ def product6():
 @app.route("/cart", methods=["POST","GET"])
 def cart():
         user_id = session["user_id"]
+        name = session["username"]
         products = db.execute("SELECT * FROM cart WHERE user_id = ?", user_id)
-        return render_template("cart.html", products=products)
+        return render_template("cart.html", products=products, name=name, user_id=user_id)
 
 
 
