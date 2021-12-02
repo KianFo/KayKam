@@ -77,8 +77,8 @@
                     <div class="card-body rounded">
                         <h5 class="card-title centered">Barca's future coach</h5>
                         <p class="card-text centered">Xavi: It's my goal and dream to coach barcelona.</p>
-                        <form action="/product2" method="POST" style="margin-right: 200px;">
-                            <select id="inputState" class="form-control" style="text-align: center; font-size: 20px;">
+                        <form action="/product1" method="POST" style="margin-right: 200px;">
+                            <select id="inputState" name="number" class="form-control" style="text-align: center; font-size: 20px;">
                               <option style="font-size: 20px; text-align: center;" class="centering" selected>none</option>
                               <option style="text-align: center; font-size: 20px;" class="centering">1</option>
                               <option style="text-align: center; font-size: 20px;">2</option>
@@ -88,10 +88,10 @@
                               <option style="text-align: center; font-size: 20px;">6</option>
                               <option style="text-align: center; font-size: 20px;">7</option>
                             </select>
-                            <input type="hidden" value="2" name="id">
+                            <input type="hidden" value="1" name="id">
                             <input type="submit" value="Add to cart" class="btn btn-success" style="margin-top: 10px; margin-right: 200px;">
                         </form>
-                        <a href="{{ url_for('product2') }}" class="btn btn-primary" style="margin-right: 280px; margin-top: 10px;">See more details and buy</a>
+                        <a href="{{ url_for('product1') }}" class="btn btn-primary" style="margin-right: 280px; margin-top: 10px;">See more details and buy</a>
                     </div>
                 </div>
               </div>
@@ -102,7 +102,7 @@
                         <h5 class="card-title centered">Gavi</h5>
                         <p class="card-text centered">Xavi hurls prais at barcelona teenager gavi.</p>
                         <form action="/product2" method="POST" style="margin-right: 200px;">
-                          <select id="inputState" class="form-control" style="text-align: center; font-size: 20px;">
+                          <select id="inputState" name="number" class="form-control" style="text-align: center; font-size: 20px;">
                             <option style="font-size: 20px; text-align: center;" class="centering" selected>none</option>
                             <option style="text-align: center; font-size: 20px;" class="centering">1</option>
                             <option style="text-align: center; font-size: 20px;">2</option>
@@ -130,8 +130,8 @@
                 <div class="card-body rounded">
                     <h5 class="card-title centered">Barca's future coach</h5>
                     <p class="card-text centered">Xavi: It's my goal and dream to coach barcelona.</p>
-                    <form action="/product2" method="POST" style="margin-right: 200px;">
-                      <select id="inputState" class="form-control" style="text-align: center; font-size: 20px;">
+                    <form action="/product3" method="POST" style="margin-right: 200px;">
+                      <select id="inputState" name="number" class="form-control" style="text-align: center; font-size: 20px;">
                         <option style="font-size: 20px; text-align: center;" class="centering" selected>none</option>
                         <option style="text-align: center; font-size: 20px;" class="centering">1</option>
                         <option style="text-align: center; font-size: 20px;">2</option>
@@ -141,14 +141,10 @@
                         <option style="text-align: center; font-size: 20px;">6</option>
                         <option style="text-align: center; font-size: 20px;">7</option>
                       </select>
-                      <input type="hidden" value="2" name="id">
+                      <input type="hidden" value="3" name="id">
                       <input type="submit" value="Add to cart" class="btn btn-success" style="margin-top: 10px; margin-right: 200px;">
                   </form>
-<<<<<<< HEAD
                   <a href="{{ url_for('product3') }}" class="btn btn-primary" style="margin-right: 280px; margin-top: 10px;">See more details and buy</a>
-=======
-                  <a href="{{ url_for('product2') }}" class="btn btn-primary" style="margin-right: 280px; margin-top: 10px;">See more details and buy</a>
->>>>>>> 45ecf9e74c7fb5c466f7b7c0a0d4f257a80c8bf0
                 </div>
             </div>
           </div>
@@ -158,8 +154,8 @@
                <div class="card-body">
                     <h5 class="card-title centered">Gavi</h5>
                     <p class="card-text centered">Xavi hurls prais at barcelona teenager gavi.</p>
-                    <form action="/product2" method="POST" style="margin-right: 200px;">
-                      <select id="inputState" class="form-control" style="text-align: center; font-size: 20px;">
+                    <form action="/product4" method="POST" style="margin-right: 200px;">
+                      <select id="inputState" name="number" class="form-control" style="text-align: center; font-size: 20px;">
                         <option style="font-size: 20px; text-align: center;" class="centering" selected>none</option>
                         <option style="text-align: center; font-size: 20px;" class="centering">1</option>
                         <option style="text-align: center; font-size: 20px;">2</option>
@@ -169,14 +165,10 @@
                         <option style="text-align: center; font-size: 20px;">6</option>
                         <option style="text-align: center; font-size: 20px;">7</option>
                       </select>
-                      <input type="hidden" value="2" name="id">
+                      <input type="hidden" value="4" name="id">
                       <input type="submit" value="Add to cart" class="btn btn-success" style="margin-top: 10px; margin-right: 200px;">
                   </form>
-<<<<<<< HEAD
                   <a href="{{ url_for('product4') }}" class="btn btn-primary" style="margin-right: 280px; margin-top: 10px;">See more details and buy</a>
-=======
-                  <a href="{{ url_for('product2') }}" class="btn btn-primary" style="margin-right: 280px; margin-top: 10px;">See more details and buy</a>
->>>>>>> 45ecf9e74c7fb5c466f7b7c0a0d4f257a80c8bf0
                 </div>
             </div>
           </div>
@@ -187,8 +179,8 @@
                   <div class="card-body rounded">
                       <h5 class="card-title centered">Barca's future coach</h5>
                       <p class="card-text centered">Xavi: It's my goal and dream to coach barcelona.</p>
-                      <form action="/product2" method="POST" style="margin-right: 200px;">
-                        <select id="inputState" class="form-control" style="text-align: center; font-size: 20px;">
+                      <form action="/product5" method="POST" style="margin-right: 200px;">
+                        <select id="inputState" name="number" class="form-control" style="text-align: center; font-size: 20px;">
                           <option style="font-size: 20px; text-align: center;" class="centering" selected>none</option>
                           <option style="text-align: center; font-size: 20px;" class="centering">1</option>
                           <option style="text-align: center; font-size: 20px;">2</option>
@@ -198,14 +190,10 @@
                           <option style="text-align: center; font-size: 20px;">6</option>
                           <option style="text-align: center; font-size: 20px;">7</option>
                         </select>
-                        <input type="hidden" value="2" name="id">
+                        <input type="hidden" value="5" name="id">
                         <input type="submit" value="Add to cart" class="btn btn-success" style="margin-top: 10px; margin-right: 200px;">
                     </form>
-<<<<<<< HEAD
                     <a href="{{ url_for('product5') }}" class="btn btn-primary" style="margin-right: 280px; margin-top: 10px;">See more details and buy</a>
-=======
-                    <a href="{{ url_for('product2') }}" class="btn btn-primary" style="margin-right: 280px; margin-top: 10px;">See more details and buy</a>
->>>>>>> 45ecf9e74c7fb5c466f7b7c0a0d4f257a80c8bf0
                   </div>
               </div>
             </div>
@@ -215,8 +203,8 @@
                  <div class="card-body">
                       <h5 class="card-title centered">Gavi</h5>
                       <p class="card-text centered">Xavi hurls prais at barcelona teenager gavi.</p>
-                      <form action="/product2" method="POST" style="margin-right: 200px;">
-                        <select id="inputState" class="form-control" style="text-align: center; font-size: 20px;">
+                      <form action="/product6" method="POST" style="margin-right: 200px;">
+                        <select id="inputState" name="number" class="form-control" style="text-align: center; font-size: 20px;">
                           <option style="font-size: 20px; text-align: center;" class="centering" selected>none</option>
                           <option style="text-align: center; font-size: 20px;" class="centering">1</option>
                           <option style="text-align: center; font-size: 20px;">2</option>
@@ -226,14 +214,10 @@
                           <option style="text-align: center; font-size: 20px;">6</option>
                           <option style="text-align: center; font-size: 20px;">7</option>
                         </select>
-                        <input type="hidden" value="2" name="id">
+                        <input type="hidden" value="6" name="id">
                         <input type="submit" value="Add to cart" class="btn btn-success" style="margin-top: 10px; margin-right: 200px;">
                     </form>
-<<<<<<< HEAD
                     <a href="{{ url_for('product6') }}" class="btn btn-primary" style="margin-right: 280px; margin-top: 10px;">See more details and buy</a>
-=======
-                    <a href="{{ url_for('product2') }}" class="btn btn-primary" style="margin-right: 280px; margin-top: 10px;">See more details and buy</a>
->>>>>>> 45ecf9e74c7fb5c466f7b7c0a0d4f257a80c8bf0
                   </div>
               </div>
             </div>
