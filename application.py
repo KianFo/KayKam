@@ -789,6 +789,13 @@ def product6():
         return render_template("product6.html", name=name)          ###################
 
 
+@app.route("/cart", methods=["POST","GET"])
+def cart():
+        user_id = session["user_id"]
+        products = db.execute("SELECT * FROM cart WHERE user_id = ?", user_id)
+        print(products) 
+        link = "https://www.soccerbible.com/media/103023/barca-locker-room.jpg"
+        return render_template("cart.html", products=products, link=link)
 
 
 
