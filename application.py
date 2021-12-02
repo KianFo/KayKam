@@ -645,10 +645,16 @@ def product4():
         number = request.form.get("number")
         pid = request.form.get("id")
         name = session["username"]
+<<<<<<< HEAD
         price = db.execute("SELECT price FROM products WHERE pid=4")[0]["price"]
         pname = db.execute("SELECT pname FROM products WHERE pid=4")[0]["pname"]
 
 
+=======
+        pname = db.execute("SELECT pname FROM products WHERE pid=4")[0]["pname"]
+        price = db.execute("SELECT price FROM products WHERE pid=4")[0]["price"]
+
+>>>>>>> cf3ef9317fe0717ba11958959cebf9a31456758c
         if request.form.get("number") == "none":
             return render_template("product4.html")     ################
 
@@ -671,7 +677,11 @@ def product4():
             return redirect("/shop")
 #        return render_template("iner.html")
         try:
+<<<<<<< HEAD
             db.execute("INSERT INTO cart (user_id, pid, number, price, pname) VALUES (?, ?, ?, ?, ?)", user_id, pid, number, price, pname)
+=======
+            db.execute("INSERT INTO cart (user_id, pid, number, pname, price) VALUES (?, ?, ?, ?, ?)", user_id, pid, number, pname, price)
+>>>>>>> cf3ef9317fe0717ba11958959cebf9a31456758c
         except:
             return render_template("test1.html")
 #        try:
