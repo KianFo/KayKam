@@ -60,22 +60,74 @@
     </head>
     <body style="background-color: #393E46;"">
       <div id="rcorners1" style="background-color: white; margin-left: 300px; margin-top: 65px; margin-right: 300px;">
-        <table class="table table-striped bordera" style="border-radius: 20px;">
-          <th>
+        <table class="table table-striped" style="border-radius: 20px;">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">name</th>
+              <th scope="col">number</th>
+              <th scope="col">price</th>
+              <th scope="col">picture</th>
+            </tr>
+          </thead>
                   {% for product in products %}
                   {% if product.pid == 1 %}
-                    <td>{{ product.pid }}</td>
+                  <tr>
+                    <td>{{ product.pname }}</td>
                     <td>{{ product.number }}</td>
-                    <td>{{ product.user_id }}</td>
-                    <td><img src="https://www.soccerbible.com/media/103023/barca-locker-room.jpg"></td>
+                    <td>{{ (product.price * product.number) }}$</td>
+                    <td><img src="https://www.soccerbible.com/media/103023/barca-locker-room.jpg" style="width: 8rem;"></td>
+                  </tr>
+                  {% endif %}
+                  {% if product.pid == 2 %}
+                  <tr>
+                    <td>{{ product.pname }}</td>
+                    <td>{{ product.number }}</td>
+                    <td>{{ (product.price * product.number) }}$</td>
+                    <td><img src="https://www.fcbarcelona.com/photo-resources/2021/06/30/61d891b2-4e78-4d7b-bbae-6f6196913754/3200x2000-fixture-21_22-eng-min.jpg?width=1200&height=750" style="width: 8rem;"></td>
+                  </tr>
+                  {% endif %}
+                  {% if product.pid == 3 %}
+                  <tr>
+                    <td>{{ product.pname }}</td>
+                    <td>{{ product.number }}</td>
+                    <td>{{ (product.price * product.number) }}$</td>
+                    <td><img src="https://www.soccerbible.com/media/103023/barca-locker-room.jpg" style="width: 8rem;"></td>
+                  </tr>
+                  {% endif %}
+                  {% if product.pid == 4 %}
+                  <tr>
+                    <td>{{ product.pname }}</td>
+                    <td>{{ product.number }}</td>
+                    <td>{{ (product.price * product.number) }}$</td>
+                    <td><img src="https://www.soccerbible.com/media/103023/barca-locker-room.jpg" style="width: 8rem;"></td>
+                  </tr>
+                  {% endif %}
+                  {% if product.pid == 5 %}
+                  <tr>
+                    <td>{{ product.pname }}</td>
+                    <td>{{ product.number }}</td>
+                    <td>{{ (product.price * product.number) }}$</td>
+                    <td><img src="https://www.fcbarcelona.com/fcbarcelona/photo/2020/02/24/3f1215ed-07e8-47ef-b2c7-8a519f65b9cd/mini_UP3_20200105_FCB_VIS_View_1a_Empty.jpg" style="width: 8rem;"></td>
+                  </tr>
+                  {% endif %}
+                  {% if product.pid == 6 %}
+                  <tr>
+                    <td>{{ product.pname }}</td>
+                    <td>{{ product.number }}</td>
+                    <td>{{ (product.price * product.number) }}$</td>
+                    <td><img src="https://www.soccerbible.com/media/103023/barca-locker-room.jpg" style="width: 8rem;"></td>
+                  </tr>
+                  {% endif %}
+                  {% if product.pid == 7 %}
+                  <tr>
+                    <td>{{ product.pname }}</td>
+                    <td>{{ product.number }}</td>
+                    <td>{{ (product.price * product.number) }}$</td>
+                    <td><img src="https://www.fcbarcelona.com/fcbarcelona/photo/2020/02/24/3f1215ed-07e8-47ef-b2c7-8a519f65b9cd/mini_UP3_20200105_FCB_VIS_View_1a_Empty.jpg" style="width: 8rem;"></td>
+                  </tr>
                   {% endif %}
                   {% endfor %}
-          </th>
         </table>
-        <h1></h1>
-      </div>
-      <span><div id="rcorners1" style="background-color: white; margin-left: 300px; margin-top: 65px; margin-right: 300px;"></span>
-        <h1>kian</h1>
       </div>
     </body>
 </html>
