@@ -86,7 +86,7 @@
         </style>
         <link href="static/style.css" rel="stylesheet">
     </head>
-    <body style="background-color: #0C7B93;">
+    <body style="background-color: #393E46;">
         <div id="rcorners1" style="background-color: white; margin-left: 300px; margin-top: 65px; margin-right: 300px; margin-bottom: 65px;">
             <span style="font-size: 160px; margin-left: 50px; margin-right: 50px;"><i style="font-size: 160px; color: #171010" class="fas fa-user-astronaut"></i></span>
             <span style="font-size: 100px;">{{ name }}</span>
@@ -94,8 +94,8 @@
             <h1 style="margin-left: 50px;">Last Name: <span style="font-size: 60px;">{{ last }}</span></h1>
             <div>
               <div class="seperator"><b><i class="far fa-credit-card"></i></b></div>
-              <a href="{{ url_for('credit') }}" class="btn btn-primary butc kbut" style="margin-left: 50px; margin-bottom: 20px;">Create a credit card</a>
-              <a href="{{ url_for('charge') }}" class="btn btn-primary butc kbut" style="margin-left: 50px; margin-bottom: 20px;">Charge your credit card</a>
+              <a href="{{ url_for('credit') }}" class="btn btn-primary butc kbut" style="margin-left: 50px; margin-bottom: 10px;">Create a credit card</a>
+              <a href="{{ url_for('charge') }}" class="btn btn-primary butc kbut" style="margin-left: 50px; margin-bottom: 10px;">Charge your credit card</a>
             </div>
             <div class="seperator"><b><i class="fa fa-user-circle-o" aria-hidden="true"></i></b></div>
             <a href="{{ url_for('changepass') }}" class="btn btn-primary butc kbut" style="margin-left: 50px;">Change your password</a>

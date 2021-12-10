@@ -812,9 +812,70 @@ def cart():
         pass
     else:
         user_id = session["user_id"]
+
+        num1 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=1", user_id)
+        price1 = db.execute("SELECT price FROM products WHERE pid=1")
+
+        num2 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=2", user_id)
+        price2 = db.execute("SELECT price FROM products WHERE pid=2")
+
+        num3 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=3", user_id)
+        price3 = db.execute("SELECT price FROM products WHERE pid=3")
+
+        num4 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=4", user_id)
+        price4 = db.execute("SELECT price FROM products WHERE pid=4")
+
+        num5 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=5", user_id)
+        price5 = db.execute("SELECT price FROM products WHERE pid=5")
+
+        num6 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=6", user_id)
+        price6 = db.execute("SELECT price FROM products WHERE pid=6")
+
+        all1 = 0
+        all2 = 0
+        all3 = 0
+        all4 = 0
+        all5 = 0
+        all6 = 0
+
+
+        try:
+            all1 = num1 * price1
+        except:
+            pass
+
+        try:
+            all2 = num2 * price2
+        except:
+            pass
+
+        try:
+            all3 = num3 * price3
+        except:
+            pass           
+
+        try:
+            all4 = num4 * price4
+        except:
+            pass          
+
+        try:
+            all5 = num5 * price5
+        except:
+            pass
+
+        try:
+            all6 = num6 * price6
+        except:
+            pass
+
+        allprice = all1 + all2 + all3 + all4 + all5 + all6
+
+
+        user_id = session["user_id"]
         products = db.execute("SELECT * FROM cart WHERE user_id = ?", user_id)
         link = "https://www.soccerbible.com/media/103023/barca-locker-room.jpg"
-        return render_template("cart.html", products=products, link=link)
+        return render_template("cart.html", products=products, link=link, allprice=allprice)
 
 
 @app.route("/delete", methods=["POST", "GET"])
@@ -908,7 +969,7 @@ def buy():
         cashin = db.execute("SELECT cash FROM credit WHERE user_id=?", user_id)
 
         if allprice > cashin:
-            return render_template("test1.html")
+            return render_template("test1.html", cashin=cashin)
 
         NewCashin = cashin - allprice
         db.execute("UPDATE cash SET cash=? WHERE user_id=?", NewCashin, user_id)
