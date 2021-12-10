@@ -910,8 +910,13 @@ def cart():
 
         user_id = session["user_id"]
         products = db.execute("SELECT * FROM cart WHERE user_id = ?", user_id)
-        link = "https://www.soccerbible.com/media/103023/barca-locker-room.jpg"
-        return render_template("cart.html", products=products, link=link, allprice=allprice)
+
+        if len(products) == 0:
+            main = "You haven't add anything to your cart!"
+            message = "by going to shop page, you can add sth to your cart!" 
+            return render_template("fail.html", main=main, message=message)
+
+        return render_template("cart.html", products=products, allprice=allprice)
 
 
 @app.route("/delete", methods=["POST", "GET"])
@@ -940,6 +945,18 @@ def delete():
 def buy():
     if request.method == "POST":
         user_id = session["user_id"]
+
+        card_number = request.form.get("credit_number")
+        password = request.form.get("password")
+
+        data = db.execute("SELECT * FROM credit WHERE card_number=?", card_number)
+
+        passhash = data[0]["card_password"]
+
+        if len(data) != 1 or not check_password_hash(passhash, password):
+            return render_template("test1.html")
+
+#        return render_template("iner.html", a=all1, b=all2, c=all3, d=all4, e=all5, f=all6, g=allprice)
 
         num1 = 0
         num2 = 0
@@ -1034,16 +1051,18 @@ def buy():
 
         allprice = all1 + all2 + all3 + all4 + all5 + all6
 
-#        return render_template("iner.html", a=all1, b=all2, c=all3, d=all4, e=all5, f=all6, g=allprice)
+        cashin = db.execute("SELECT cash FROM credit WHERE card_number=?", card_number)[0]["cash"]
 
 
-        cashin = db.execute("SELECT cash FROM credit WHERE user_id=?", user_id)[0]["cash"]
-
-#        if allprice > cashin:
-#            return render_template("notmoney.html", cashin=cashin)
+        if allprice > cashin:
+            return render_template("notmoney.html", cashin=cashin)
 
         NewCashin = cashin - allprice
-        db.execute("UPDATE cash SET cash=? WHERE user_id=?", NewCashin, user_id)
+
+        db.execute("UPDATE credit SET cash=? WHERE card_number=?", NewCashin, card_number)
+  #          db.execute("DELETE FROM credit WHERE user_id=?", user_id)
+
+        return redirect("/cart")
             
     else:
         user_id = session["user_id"]
