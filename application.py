@@ -1,4 +1,3 @@
-from itertools import Predicate
 from flask import Flask, redirect, render_template, request, session
 from werkzeug.security import check_password_hash, generate_password_hash
 from cs50 import SQL
