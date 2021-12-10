@@ -1,4 +1,3 @@
-from itertools import Predicate
 from flask import Flask, redirect, render_template, request, session
 from werkzeug.security import check_password_hash, generate_password_hash
 from cs50 import SQL
@@ -829,6 +828,8 @@ def delete():
             db.execute("DELETE * FROM cart WHERE pid=? AND user_id=?", pid, user_id)
         except:
             return render_template("test1.html")
+
+        return redirect("/cart")
 
     else:
         return render_template("cart.html")
