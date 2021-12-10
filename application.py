@@ -813,23 +813,58 @@ def cart():
     else:
         user_id = session["user_id"]
 
-        num1 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=1", user_id)
-        price1 = db.execute("SELECT price FROM products WHERE pid=1")
 
-        num2 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=2", user_id)
-        price2 = db.execute("SELECT price FROM products WHERE pid=2")
+        num1 = 0
+        num2 = 0
+        num3 = 0
+        num4 = 0
+        num5 = 0
+        num6 = 0
 
-        num3 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=3", user_id)
-        price3 = db.execute("SELECT price FROM products WHERE pid=3")
+        price1 = 0
+        price2 = 0
+        price3 = 0
+        price4 = 0
+        price5 = 0
+        price6 = 0
 
-        num4 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=4", user_id)
-        price4 = db.execute("SELECT price FROM products WHERE pid=4")
+        try:
+            num1 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=1", user_id)[0]["number"]
+            price1 = db.execute("SELECT price FROM products WHERE pid=1")[0]["price"]
+        except:
+            pass
 
-        num5 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=5", user_id)
-        price5 = db.execute("SELECT price FROM products WHERE pid=5")
+        try:
+            num2 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=2", user_id)[0]["number"]
+            price2 = db.execute("SELECT price FROM products WHERE pid=2")[0]["price"]
+        except:
+            pass
 
-        num6 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=6", user_id)
-        price6 = db.execute("SELECT price FROM products WHERE pid=6")
+        try:
+            num3 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=3", user_id)[0]["number"]
+            price3 = db.execute("SELECT price FROM products WHERE pid=3")[0]["price"]
+        except:
+            pass
+
+        try:
+            num4 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=4", user_id)[0]["number"]
+            price4 = db.execute("SELECT price FROM products WHERE pid=4")[0]["price"]
+        except:
+            pass
+
+        try:
+            num5 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=5", user_id)[0]["number"]
+            price5 = db.execute("SELECT price FROM products WHERE pid=5")[0]["price"]
+        except:
+            pass
+
+        try:
+            num6 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=6", user_id)[0]["number"]
+            price6 = db.execute("SELECT price FROM products WHERE pid=6")[0]["price"]
+        except:
+            pass
+
+ #       return render_template("iner.html", a=num1, b=price1, c=num2, d=price2, e=num3, f=price3)
 
         all1 = 0
         all2 = 0
@@ -868,6 +903,7 @@ def cart():
             all6 = num6 * price6
         except:
             pass
+
 
         allprice = all1 + all2 + all3 + all4 + all5 + all6
 
@@ -905,24 +941,57 @@ def buy():
     if request.method == "POST":
         user_id = session["user_id"]
 
+        num1 = 0
+        num2 = 0
+        num3 = 0
+        num4 = 0
+        num5 = 0
+        num6 = 0
 
-        num1 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=1", user_id)
-        price1 = db.execute("SELECT price FROM products WHERE pid=1")
+        price1 = 0
+        price2 = 0
+        price3 = 0
+        price4 = 0
+        price5 = 0
+        price6 = 0
 
-        num2 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=2", user_id)
-        price2 = db.execute("SELECT price FROM products WHERE pid=2")
+        try:
+            num1 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=1", user_id)[0]["number"]
+            price1 = db.execute("SELECT price FROM products WHERE pid=1")[0]["price"]
+        except:
+            pass
 
-        num3 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=3", user_id)
-        price3 = db.execute("SELECT price FROM products WHERE pid=3")
+        try:
+            num2 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=2", user_id)[0]["number"]
+            price2 = db.execute("SELECT price FROM products WHERE pid=2")[0]["price"]
+        except:
+            pass
 
-        num4 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=4", user_id)
-        price4 = db.execute("SELECT price FROM products WHERE pid=4")
+        try:
+            num3 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=3", user_id)[0]["number"]
+            price3 = db.execute("SELECT price FROM products WHERE pid=3")[0]["price"]
+        except:
+            pass
 
-        num5 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=5", user_id)
-        price5 = db.execute("SELECT price FROM products WHERE pid=5")
+        try:
+            num4 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=4", user_id)[0]["number"]
+            price4 = db.execute("SELECT price FROM products WHERE pid=4")[0]["price"]
+        except:
+            pass
 
-        num6 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=6", user_id)
-        price6 = db.execute("SELECT price FROM products WHERE pid=6")
+        try:
+            num5 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=5", user_id)[0]["number"]
+            price5 = db.execute("SELECT price FROM products WHERE pid=5")[0]["price"]
+        except:
+            pass
+
+        try:
+            num6 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=6", user_id)[0]["number"]
+            price6 = db.execute("SELECT price FROM products WHERE pid=6")[0]["price"]
+        except:
+            pass
+
+ #       return render_template("iner.html", a=num1, b=price1, c=num2, d=price2, e=num3, f=price3)
 
         all1 = 0
         all2 = 0
@@ -963,13 +1032,15 @@ def buy():
             pass
 
 
-
         allprice = all1 + all2 + all3 + all4 + all5 + all6
 
-        cashin = db.execute("SELECT cash FROM credit WHERE user_id=?", user_id)
+#        return render_template("iner.html", a=all1, b=all2, c=all3, d=all4, e=all5, f=all6, g=allprice)
 
-        if allprice > cashin:
-            return render_template("test1.html", cashin=cashin)
+
+        cashin = db.execute("SELECT cash FROM credit WHERE user_id=?", user_id)[0]["cash"]
+
+#        if allprice > cashin:
+#            return render_template("notmoney.html", cashin=cashin)
 
         NewCashin = cashin - allprice
         db.execute("UPDATE cash SET cash=? WHERE user_id=?", NewCashin, user_id)
@@ -977,23 +1048,57 @@ def buy():
     else:
         user_id = session["user_id"]
 
-        num1 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=1", user_id)
-        price1 = db.execute("SELECT price FROM products WHERE pid=1")
+        num1 = 0
+        num2 = 0
+        num3 = 0
+        num4 = 0
+        num5 = 0
+        num6 = 0
 
-        num2 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=2", user_id)
-        price2 = db.execute("SELECT price FROM products WHERE pid=2")
+        price1 = 0
+        price2 = 0
+        price3 = 0
+        price4 = 0
+        price5 = 0
+        price6 = 0
 
-        num3 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=3", user_id)
-        price3 = db.execute("SELECT price FROM products WHERE pid=3")
+        try:
+            num1 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=1", user_id)[0]["number"]
+            price1 = db.execute("SELECT price FROM products WHERE pid=1")[0]["price"]
+        except:
+            pass
 
-        num4 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=4", user_id)
-        price4 = db.execute("SELECT price FROM products WHERE pid=4")
+        try:
+            num2 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=2", user_id)[0]["number"]
+            price2 = db.execute("SELECT price FROM products WHERE pid=2")[0]["price"]
+        except:
+            pass
 
-        num5 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=5", user_id)
-        price5 = db.execute("SELECT price FROM products WHERE pid=5")
+        try:
+            num3 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=3", user_id)[0]["number"]
+            price3 = db.execute("SELECT price FROM products WHERE pid=3")[0]["price"]
+        except:
+            pass
 
-        num6 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=6", user_id)
-        price6 = db.execute("SELECT price FROM products WHERE pid=6")
+        try:
+            num4 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=4", user_id)[0]["number"]
+            price4 = db.execute("SELECT price FROM products WHERE pid=4")[0]["price"]
+        except:
+            pass
+
+        try:
+            num5 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=5", user_id)[0]["number"]
+            price5 = db.execute("SELECT price FROM products WHERE pid=5")[0]["price"]
+        except:
+            pass
+
+        try:
+            num6 = db.execute("SELECT number FROM cart WHERE user_id=? AND pid=6", user_id)[0]["number"]
+            price6 = db.execute("SELECT price FROM products WHERE pid=6")[0]["price"]
+        except:
+            pass
+
+ #       return render_template("iner.html", a=num1, b=price1, c=num2, d=price2, e=num3, f=price3)
 
         all1 = 0
         all2 = 0
@@ -1001,6 +1106,7 @@ def buy():
         all4 = 0
         all5 = 0
         all6 = 0
+
 
         try:
             all1 = num1 * price1
@@ -1031,6 +1137,7 @@ def buy():
             all6 = num6 * price6
         except:
             pass
+
 
         allprice = all1 + all2 + all3 + all4 + all5 + all6
 
