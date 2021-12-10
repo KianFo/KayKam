@@ -823,13 +823,16 @@ def delete():
         pid = request.form.get("id")
         user_id = session["user_id"]
 
+#        return render_template("iner.html", a=pid, b=user_id)
+
 
         try:
-            db.execute("DELETE * FROM cart WHERE pid=? AND user_id=?", pid, user_id)
+            db.execute("DELETE FROM cart WHERE pid=? AND user_id=?", pid, user_id)
         except:
             return render_template("test1.html")
 
-        redirect()
+        return redirect("/cart")
+
 
     else:
         return render_template("cart.html")
