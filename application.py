@@ -1060,7 +1060,7 @@ def buy():
         NewCashin = cashin - allprice
 
         db.execute("UPDATE credit SET cash=? WHERE card_number=?", NewCashin, card_number)
-  #          db.execute("DELETE FROM credit WHERE user_id=?", user_id)
+        db.execute("DELETE FROM cart WHERE user_id=?", user_id)
 
         return redirect("/cart")
             
