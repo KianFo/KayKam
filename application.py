@@ -874,8 +874,13 @@ def cart():
 
         user_id = session["user_id"]
         products = db.execute("SELECT * FROM cart WHERE user_id = ?", user_id)
-        link = "https://www.soccerbible.com/media/103023/barca-locker-room.jpg"
-        return render_template("cart.html", products=products, link=link, allprice=allprice)
+
+        if len(products) == 0:
+            main = "You haven't add anything to your cart!"
+            message = "by going to shop page, you can add sth to your cart!" 
+            return render_template("fail.html", main=main, message=message)
+
+        return render_template("cart.html", products=products, allprice=allprice)
 
 
 @app.route("/delete", methods=["POST", "GET"])
