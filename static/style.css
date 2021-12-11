@@ -604,9 +604,17 @@ footer button.show{
 
 
 
+#finalmove {
+    margin-left: auto;
+    margin-right: auto;
+    width: 8em
+}
 
-
-
+.finalmove {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80em
+}
 
 
 
