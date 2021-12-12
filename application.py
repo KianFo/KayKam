@@ -916,7 +916,8 @@ def cart():
             message = "by going to shop page, you can add sth to your cart!" 
             return render_template("fail.html", main=main, message=message)
 
-        return render_template("cart.html", products=products, allprice=allprice)
+        name = session["username"]
+        return render_template("cart.html", products=products, allprice=allprice, name=name)
 
 
 @app.route("/delete", methods=["POST", "GET"])
