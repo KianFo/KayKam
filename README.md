@@ -3,7 +3,7 @@
 #### DESCRIPTION:
 ***CONTENT***:
 
-Hi I'm Kian Fotovat and my brother (Kamran Fotovat)
+Hello World! I'm Kian Fotovat and my brother (Kamran Fotovat)
 and I are the developers of this project.
 Our project is a web application about Barcelona
 Football club.
@@ -60,4 +60,6 @@ In our application we used several libraries such as
 
 - cs50
 
+That was our project! 
 
+I hope you try it and enjoy it!
