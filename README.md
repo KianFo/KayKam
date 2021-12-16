@@ -22,7 +22,7 @@ go to shop page and add anything you want to your cart.
 Also in profile tap, you can change your user's information
 Such as first/last name and .... .
 
-Now let's talk about hour advanced login/register and logout 
+Now let's talk about our advanced login/register and logout 
 system. We tried to handle all kind of errors on it so with each
 Wrong input value you will encounter an error. In register page
 we ask you to enter your first/last name and username and a password
@@ -30,11 +30,23 @@ so you can relogin whenever you want!
 
 In login page you have to enter your username and password so we can 
 Confirm it's you!
+
 ***CODE***:
 
 Let's talk about coding of our project!
+
 The framework of our project is set with flask.
 We also used these programming languages ( html, css, python, JavaScript)
 in our code. 
 
+In our flask app, you can see templates file that includes 
+about 40 html files. Also there is static file which includes
+Css files and JavaScript files of our flask app.
+
+There is two applications there that one of them is our main application.py and the 
+next is a tool.py that returns a function which forces users
+to login to their account before anything else!
+
+We took care of hour database need with SQLite. 
+We used it several times in register/login/logout, 
 
