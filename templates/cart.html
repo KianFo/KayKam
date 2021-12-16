@@ -77,112 +77,112 @@
                   {% for product in products %}
                   {% if product.pid == 1 %}
                   <tr>
-                    <td style="text-align: center; font-size: 25px;">{{ product.pname }}</td>
-                    <td style="text-align: center; font-size: 25px;">{{ product.number }}</td>
-                    <td style="text-align: center; font-size: 25px;">{{ (product.price * product.number) }}$</td>
-                    <td style="text-align: center;"><img src="https://www.soccerbible.com/media/103023/barca-locker-room.jpg" style="width: 8rem;"></td>
-                    <td style="text-align: center; font-size: 25px;">
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.pname }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.number }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ (product.price * product.number) }}$</td>
+                    <td class="vercenter" style="text-align: center;"><img src="https://store.fcbarcelona.com/medias/700x1060-CV7891-428-1.jpg?context=bWFzdGVyfGltYWdlc3wyOTA0MDh8aW1hZ2UvanBlZ3xoMTQvaGUzLzg4OTQ5MTM3NzM1OTgvNzAweDEwNjAvQ1Y3ODkxLTQyOF8xLmpwZ3wwY2I2ZDQ2MjcxNWU3OTllMDYyYmY5MTcxZjgxNWY3N2Q2OWU4MTI4YzlkMGM0NTliMDZiYWZhOGZkYTNiZmQy" style="width: 8rem;"></td>
+                    <td class="vercenter" style="text-align: center; font-size: 25px;">
                       <form action="/delete" method="POST">
                       <input name="id" value={{ product.pid }} type="hidden">  
-                      <button type="submit" class="btn btn-danger" style="font-size: 40px;"><i class="fas fa-trash-alt"></i></button>
+                      <button type="submit" class="btn btn-danger " style="font-size: 60px;"><i class="fas fa-trash-alt"></i></button>
                       </form>
                     </td>
                   </tr>
                   {% endif %}
                   {% if product.pid == 2 %}
                   <tr>
-                    <td style="text-align: center; font-size: 25px;">{{ product.pname }}</td>
-                    <td style="text-align: center; font-size: 25px;">{{ product.number }}</td>
-                    <td style="text-align: center; font-size: 25px;">{{ (product.price * product.number) }}$</td>
-                    <td style="text-align: center;"><img src="https://www.fcbarcelona.com/photo-resources/2021/06/30/61d891b2-4e78-4d7b-bbae-6f6196913754/3200x2000-fixture-21_22-eng-min.jpg?width=1200&height=750" style="width: 8rem;"></td>
-                    <td style="text-align: center; font-size: 25px;">
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.pname }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.number }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ (product.price * product.number) }}$</td>
+                    <td class="vercenter" style="text-align: center;"><img src="https://www.fcbarcelona.com/photo-resources/2021/06/30/61d891b2-4e78-4d7b-bbae-6f6196913754/3200x2000-fixture-21_22-eng-min.jpg?width=1200&height=750" style="width: 8rem;"></td>
+                    <td class="vercenter" style="text-align: center; font-size: 25px;">
                       <form action="/delete" method="POST">
                       <input name="id" value={{ product.pid }} type="hidden">  
-                      <button type="submit" class="btn btn-danger" style="font-size: 40px;"><i class="fas fa-trash-alt"></i></button>
+                      <button type="submit" class="btn btn-danger" style="font-size: 60px;"><i class="fas fa-trash-alt"></i></button>
                       </form>
                     </td>
                   </tr>
                   {% endif %}
                   {% if product.pid == 3 %}
                   <tr>
-                    <td style="text-align: center; font-size: 25px;">{{ product.pname }}</td>
-                    <td style="text-align: center; font-size: 25px;">{{ product.number }}</td>
-                    <td style="text-align: center; font-size: 25px;">{{ (product.price * product.number) }}$</td>
-                    <td style="text-align: center;"><img src="https://www.soccerbible.com/media/103023/barca-locker-room.jpg" style="width: 8rem;"></td>
-                    <td style="text-align: center; font-size: 25px;">
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.pname }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.number }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ (product.price * product.number) }}$</td>
+                    <td class="vercenter" style="text-align: center;"><img src="https://www.soccerbible.com/media/103023/barca-locker-room.jpg" style="width: 8rem;"></td>
+                    <td class="vercenter" style="text-align: center; font-size: 25px;">
                       <form action="/delete" method="POST">
                       <input name="id" value={{ product.pid }} type="hidden">  
-                      <button type="submit" class="btn btn-danger" style="font-size: 40px;"><i class="fas fa-trash-alt"></i></button>
+                      <button type="submit" class="btn btn-danger" style="font-size: 60px;"><i class="fas fa-trash-alt"></i></button>
                       </form>
                     </td>
                   </tr>
                   {% endif %}
                   {% if product.pid == 4 %}
                   <tr>
-                    <td style="text-align: center; font-size: 25px;">{{ product.pname }}</td>
-                    <td style="text-align: center; font-size: 25px;">{{ product.number }}</td>
-                    <td style="text-align: center; font-size: 25px;">{{ (product.price * product.number) }}$</td>
-                    <td style="text-align: center;"><img src="https://www.soccerbible.com/media/103023/barca-locker-room.jpg" style="width: 8rem;"></td>
-                    <td style="text-align: center; font-size: 25px;">
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.pname }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.number }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ (product.price * product.number) }}$</td>
+                    <td class="vercenter" style="text-align: center;"><img src="https://www.soccerbible.com/media/103023/barca-locker-room.jpg" style="width: 8rem;"></td>
+                    <td class="vercenter" style="text-align: center; font-size: 25px;">
                       <form action="/delete" method="POST">
                       <input name="id" value={{ product.pid }} type="hidden">  
-                      <button type="submit" class="btn btn-danger" style="font-size: 40px;"><i class="fas fa-trash-alt"></i></button>
+                      <button type="submit" class="btn btn-danger" style="font-size: 60px;"><i class="fas fa-trash-alt"></i></button>
                       </form>
                     </td>
                   </tr>
                   {% endif %}
                   {% if product.pid == 5 %}
                   <tr>
-                    <td style="text-align: center; font-size: 25px;">{{ product.pname }}</td>
-                    <td style="text-align: center; font-size: 25px;">{{ product.number }}</td>
-                    <td style="text-align: center; font-size: 25px;">{{ (product.price * product.number) }}$</td>
-                    <td style="text-align: center;"><img src="https://www.fcbarcelona.com/fcbarcelona/photo/2020/02/24/3f1215ed-07e8-47ef-b2c7-8a519f65b9cd/mini_UP3_20200105_FCB_VIS_View_1a_Empty.jpg" style="width: 8rem;"></td>
-                    <td style="text-align: center; font-size: 25px;">
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.pname }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.number }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ (product.price * product.number) }}$</td>
+                    <td class="vercenter" style="text-align: center;"><img src="https://www.fcbarcelona.com/fcbarcelona/photo/2020/02/24/3f1215ed-07e8-47ef-b2c7-8a519f65b9cd/mini_UP3_20200105_FCB_VIS_View_1a_Empty.jpg" style="width: 8rem;"></td>
+                    <td class="vercenter" style="text-align: center; font-size: 25px;">
                       <form action="/delete" method="POST">
                       <input name="id" value={{ product.pid }} type="hidden">  
-                      <button type="submit" class="btn btn-danger" style="font-size: 40px;"><i class="fas fa-trash-alt"></i></button>
+                      <button type="submit" class="btn btn-danger" style="font-size: 60px;"><i class="fas fa-trash-alt"></i></button>
                       </form>
                     </td>
                   </tr>
                   {% endif %}
                   {% if product.pid == 6 %}
                   <tr>
-                    <td style="text-align: center; font-size: 25px;">{{ product.pname }}</td>
-                    <td style="text-align: center; font-size: 25px;">{{ product.number }}</td>
-                    <td style="text-align: center; font-size: 25px;">{{ (product.price * product.number) }}$</td>
-                    <td style="text-align: center;"><img src="https://www.soccerbible.com/media/103023/barca-locker-room.jpg" style="width: 8rem;"></td>
-                    <td style="text-align: center; font-size: 25px;">
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.pname }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.number }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ (product.price * product.number) }}$</td>
+                    <td class="vercenter" style="text-align: center;"><img src="https://www.soccerbible.com/media/103023/barca-locker-room.jpg" style="width: 8rem;"></td>
+                    <td class="vercenter" style="text-align: center; font-size: 25px;">
                       <form action="/delete" method="POST">
                       <input name="id" value={{ product.pid }} type="hidden">  
-                      <button type="submit" class="btn btn-danger" style="font-size: 40px;"><i class="fas fa-trash-alt"></i></button>
+                      <button type="submit" class="btn btn-danger" style="font-size: 60px;"><i class="fas fa-trash-alt"></i></button>
                       </form>
                     </td>
                   </tr>
                   {% endif %}
                   {% if product.pid == 7 %}
                   <tr>
-                    <td style="text-align: center; font-size: 25px;">{{ product.pname }}</td>
-                    <td style="text-align: center; font-size: 25px;">{{ product.number }}</td>
-                    <td style="text-align: center; font-size: 25px;">{{ (product.price * product.number) }}$</td>
-                    <td style="text-align: center;"><img src="https://www.fcbarcelona.com/fcbarcelona/photo/2020/02/24/3f1215ed-07e8-47ef-b2c7-8a519f65b9cd/mini_UP3_20200105_FCB_VIS_View_1a_Empty.jpg" style="width: 8rem;"></td>
-                    <td style="text-align: center; font-size: 25px;">
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.pname }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.number }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ (product.price * product.number) }}$</td>
+                    <td class="vercenter" style="text-align: center;"><img src="https://www.fcbarcelona.com/fcbarcelona/photo/2020/02/24/3f1215ed-07e8-47ef-b2c7-8a519f65b9cd/mini_UP3_20200105_FCB_VIS_View_1a_Empty.jpg" style="width: 8rem;"></td>
+                    <td class="vercenter" style="text-align: center; font-size: 25px;">
                       <form action="/delete" method="POST">
                       <input name="id" value={{ product.pid }} type="hidden">  
-                      <button type="submit" class="btn btn-danger" style="font-size: 40px;"><i class="fas fa-trash-alt"></i></button>
+                      <button type="submit" class="btn btn-danger" style="font-size: 60px;"><i class="fas fa-trash-alt"></i></button>
                       </form>
                     </td>
                   </tr>
                   {% endif %}
                   {% endfor %}
                   <tr>
-                    <td style="text-align: center; font-size: 25px;">totall</td>
-                    <td style="text-align: center; font-size: 25px;">{{ allnum }}</td>
-                    <td style="text-align: center; font-size: 25px;">{{ allprice }}$</td>
-                    <td style="text-align: center; font-size: 25px;"></td>
-                    <td style="text-align: center; font-size: 25px;"></td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">totall</td>
+                    <td class="vercenter" class="vercenter" style="text-align: center; font-size: 35px;">{{ allnum }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ allprice }}$</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px;"></td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px;"></td>
                   </tr>
         </table>
-        <a href="{{ url_for('buy') }}" class="btn btn-danger" style="font-size: 20px; margin-left: 30px; margin-top: 20px;">CHECKOUT</a>
+        <a href="{{ url_for('buy') }}" class="btn btn-danger" style="font-size: 40px; margin-left: 30px; margin-top: 20px;">CHECKOUT</a>
       </div>
     </body>
 </html>

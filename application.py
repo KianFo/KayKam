@@ -388,7 +388,8 @@ def charge():
             cash1 = int(user[0]["cash"])
             newcash = cash + cash1
         except:
-            return render_template("test1.html") ##################
+            message = "Wrong input values!"
+            return render_template("charge.html", cashe=message) ##################
 
 
 

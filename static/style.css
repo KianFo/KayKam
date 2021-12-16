@@ -633,7 +633,11 @@ footer button.show{
     width: 80em
 }
 
-
+.vercenter {
+    line-height: 200px;
+    height: 200px;
+    text-align: center;
+  }
 
 
 
