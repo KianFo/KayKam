@@ -1,7 +1,7 @@
 # KayKam
 #### Video Demo: <URL HERE>
 #### DESCRIPTION:
-/CONTENT/:
+***CONTENT***:
 Hi I'm Kian Fotovat and my brother (Kamran Fotovat)
 and I are the developers of this project.
 Our project is a web application about Barcelona
@@ -24,7 +24,7 @@ we ask you to enter your first/last name and username and a password
 so you can relogin whenever you want!
 In login page you have to enter your username and password so we can 
 Confirm it's you!
-/CODE/:
+***CODE***:
 Let's talk about coding of our project!
 The framework of our project is set with flask.
 We also used these programming languages ( html, css, python, JavaScript)
