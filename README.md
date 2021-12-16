@@ -54,10 +54,10 @@ We record them all with SQLite in our barca.db file.
 
 In our application we used several libraries such as 
 
-*Flask*
+- Flask
 
-flask_session
+- flask_session
 
-cs50
+- cs50
 
 
