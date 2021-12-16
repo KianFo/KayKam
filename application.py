@@ -382,11 +382,13 @@ def charge():
             return render_template("charge.html", cashe=cashe)
 
 
-
-        user = db.execute("SELECT * FROM credit WHERE card_number=?", card_number)
-        passw = user[0]["card_password"]
-        cash1 = int(user[0]["cash"])
-        newcash = cash + cash1
+        try:
+            user = db.execute("SELECT * FROM credit WHERE card_number=?", card_number)
+            passw = user[0]["card_password"]
+            cash1 = int(user[0]["cash"])
+            newcash = cash + cash1
+        except:
+            return render_template("test1.html") ##################
 
 
 
@@ -505,7 +507,7 @@ def product1():
 
     else:
         name = session["username"]
-        return render_template("temp.html", name=name)          ###################
+        return render_template("product1.html", name=name)          ###################
 
 
 
@@ -947,15 +949,37 @@ def buy():
     if request.method == "POST":
         user_id = session["user_id"]
 
+
         card_number = request.form.get("credit_number")
         password = request.form.get("password")
 
-        data = db.execute("SELECT * FROM credit WHERE card_number=?", card_number)
 
-        passhash = data[0]["card_password"]
+        #errors
+        if not card_number:
+            card_numbere = "Please enter your card number"
+            return render_template("buy.html", card_numbere=card_numbere)
+        
+        if not password:
+            passworde = "Please enter your password"
+            return render_template("buy.html", passworde=passworde)
+
+        try:
+            data = db.execute("SELECT * FROM credit WHERE card_number=?", card_number)
+        except:
+            card_numbere = "Card number invalid!"
+            return render_template("buy.html", card_numbere=card_numbere)
+
+        try:
+            passhash = data[0]["card_password"]
+        except:
+            passworde = "Password incorrect!"
+            return render_template("buy.html", passworde=passworde)
+
 
         if len(data) != 1 or not check_password_hash(passhash, password):
             return render_template("test1.html")
+
+
 
 #        return render_template("iner.html", a=all1, b=all2, c=all3, d=all4, e=all5, f=all6, g=allprice)
 
