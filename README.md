@@ -49,4 +49,15 @@ to login to their account before anything else!
 
 We took care of hour database need with SQLite. 
 We used it several times in register/login/logout, 
+ Shop and user's cart and even user's personal information.
+We record them all with SQLite in our barca.db file.
+
+In our application we used several libraries such as 
+
+Flask
+
+flask_session
+
+cs50
+
 
