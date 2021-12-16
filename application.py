@@ -1,4 +1,5 @@
 from flask import Flask, redirect, render_template, request, session
+from flask.scaffold import F
 from werkzeug.security import check_password_hash, generate_password_hash
 from cs50 import SQL
 from tools import login_required
@@ -867,7 +868,6 @@ def cart():
         except:
             pass
 
- #       return render_template("iner.html", a=num1, b=price1, c=num2, d=price2, e=num3, f=price3)
 
         all1 = 0
         all2 = 0
@@ -878,38 +878,39 @@ def cart():
 
 
         try:
-            all1 = num1 * price1
+            all1 = float(num1) * float(price1)
         except:
             pass
 
         try:
-            all2 = num2 * price2
+            all2 = float(num2) * float(price2)
         except:
             pass
 
         try:
-            all3 = num3 * price3
+            all3 = float(num3) * float(price3)
         except:
             pass           
 
         try:
-            all4 = num4 * price4
+            all4 = float(num4) * float(price4)
         except:
             pass          
 
         try:
-            all5 = num5 * price5
+            all5 = float(num5) * float(price5)
         except:
             pass
 
         try:
-            all6 = num6 * price6
+            all6 = float(num6) * float(price6)
         except:
             pass
 
 
-        allprice = all1 + all2 + all3 + all4 + all5 + all6
+        allprice = float(all1) + float(all2) + float(all3) + float(all4) + float(all5) + float(all6)
 
+#        return render_template("iner.html", a=all1, b=all2, c=all3, d=allprice, e=all4, f=all5, g=all6)
 
         user_id = session["user_id"]
         products = db.execute("SELECT * FROM cart WHERE user_id = ?", user_id)
@@ -920,7 +921,7 @@ def cart():
             return render_template("fail.html", main=main, message=message)
 
         name = session["username"]
-        return render_template("cart.html", products=products, allprice=allprice, name=name)
+        return render_template("cart.html", products=products, allprice=round(allprice), name=name, all1=all1, all2=all2, all3=all3, all4=all4, all5=all5, all6=all6)
 
 
 @app.route("/delete", methods=["POST", "GET"])
@@ -980,9 +981,6 @@ def buy():
         if len(data) != 1 or not check_password_hash(passhash, password):
             return render_template("test1.html")
 
-
-
-#        return render_template("iner.html", a=all1, b=all2, c=all3, d=all4, e=all5, f=all6, g=allprice)
 
         num1 = 0
         num2 = 0
@@ -1076,6 +1074,8 @@ def buy():
 
 
         allprice = all1 + all2 + all3 + all4 + all5 + all6
+
+#        return render_template("iner.html", a=all1, b=all2, c=all3, d=all4, e=all5, f=all6, g=allprice)
 
         cashin = db.execute("SELECT cash FROM credit WHERE card_number=?", card_number)[0]["cash"]
 
@@ -1143,7 +1143,6 @@ def buy():
         except:
             pass
 
- #       return render_template("iner.html", a=num1, b=price1, c=num2, d=price2, e=num3, f=price3)
 
         all1 = 0
         all2 = 0
@@ -1154,39 +1153,41 @@ def buy():
 
 
         try:
-            all1 = num1 * price1
+            all1 = float(num1) * float(price1)
         except:
             pass
 
         try:
-            all2 = num2 * price2
+            all2 = float(num2) * float(price2)
         except:
             pass
 
         try:
-            all3 = num3 * price3
+            all3 = float(num3) * float(price3)
         except:
             pass           
 
         try:
-            all4 = num4 * price4
+            all4 = float(num4) * float(price4)
         except:
             pass          
 
         try:
-            all5 = num5 * price5
+            all5 = float(num5) * float(price5)
         except:
             pass
 
         try:
-            all6 = num6 * price6
+            all6 = float(num6) * float(price6)
         except:
             pass
 
 
         allprice = all1 + all2 + all3 + all4 + all5 + all6
 
-        return render_template("buy.html", allrpice=allprice)
+#        return render_template("iner.html", a=all1, b=all2, c=all3, d=allprice, e=all4, f=all5, g=all6)
+
+        return render_template("buy.html", allrpice=round(allprice))
 
 
 
