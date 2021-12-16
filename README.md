@@ -26,4 +26,6 @@ In login page you have to enter your username and password so we can
 Confirm it's you!
 /CODE/:
 Let's talk about coding of our project!
-
+The framework of our project is set with flask.
+We also used these programming languages ( html, css, python, JavaScript)
+in our code. 
