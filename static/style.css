@@ -639,7 +639,17 @@ footer button.show{
     text-align: center;
   }
 
+.vercenter1 {
+    line-height: 70px;
+    height: 70px;
+    text-align: center;
+}
 
+.vercenter4 {
+    line-height: 100px;
+    height: 100px;
+    text-align: center;
+  }
 
 
 
