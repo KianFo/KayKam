@@ -77,13 +77,9 @@
                   {% for product in products %}
                   {% if product.pid == 1 %}
                   <tr>
-                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.pname }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px; color: #630000;">{{ product.pname }}</td>
                     <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.number }}</td>
-<<<<<<< HEAD
-                    <td class="vercenter" style="text-align: center; font-size: 35px; color:green;">{{ (product.price * product.number) }}$</td>
-=======
-                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ all1 }}$</td>
->>>>>>> a6c6837a2f92c546fc9fd87b9dd7ead861c6b179
+                    <td class="vercenter" style="text-align: center; font-size: 35px; color:green;">{{ all1 }}$</td>
                     <td class="vercenter" style="text-align: center;"><img src="https://store.fcbarcelona.com/medias/700x1060-CV7891-428-1.jpg?context=bWFzdGVyfGltYWdlc3wyOTA0MDh8aW1hZ2UvanBlZ3xoMTQvaGUzLzg4OTQ5MTM3NzM1OTgvNzAweDEwNjAvQ1Y3ODkxLTQyOF8xLmpwZ3wwY2I2ZDQ2MjcxNWU3OTllMDYyYmY5MTcxZjgxNWY3N2Q2OWU4MTI4YzlkMGM0NTliMDZiYWZhOGZkYTNiZmQy" style="width: 8rem;"></td>
                     <td class="vercenter" style="text-align: center; font-size: 25px;">
                       <form action="/delete" method="POST">
@@ -95,15 +91,10 @@
                   {% endif %}
                   {% if product.pid == 2 %}
                   <tr>
-                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.pname }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px; color: #630000;">{{ product.pname }}</td>
                     <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.number }}</td>
-<<<<<<< HEAD
-                    <td class="vercenter" style="text-align: center; font-size: 35px; color:green;">{{ (product.price * product.number) }}$</td>
-                    <td class="vercenter" style="text-align: center;"><img src="https://store.fcbarcelona.com/medias/700x1060-74240-1.jpg?context=bWFzdGVyfGltYWdlc3wyNjg3NDB8aW1hZ2UvanBlZ3xoZDEvaGE5Lzg5MDMyMjg3MTkxMzQvNzAweDEwNjAvNzQyNDBfMS5qcGd8MzE5MTE5MDVmNTdlMzY3OTI3MWE3ZGMwNzg3OTNkZWNiMTk0ZTY2NzA0YzE0ZGQxNjI1ZGFhYmQxOTViYzI0ZA" style="width: 8rem;"></td>
-=======
-                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ all2 }}$</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px; color:green;">{{ all2 }}$</td>
                     <td class="vercenter" style="text-align: center;"><img src="https://www.fcbarcelona.com/photo-resources/2021/06/30/61d891b2-4e78-4d7b-bbae-6f6196913754/3200x2000-fixture-21_22-eng-min.jpg?width=1200&height=750" style="width: 8rem;"></td>
->>>>>>> a6c6837a2f92c546fc9fd87b9dd7ead861c6b179
                     <td class="vercenter" style="text-align: center; font-size: 25px;">
                       <form action="/delete" method="POST">
                       <input name="id" value={{ product.pid }} type="hidden">  
@@ -114,15 +105,10 @@
                   {% endif %}
                   {% if product.pid == 3 %}
                   <tr>
-                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.pname }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px; color: #630000;">{{ product.pname }}</td>
                     <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.number }}</td>
-<<<<<<< HEAD
-                    <td class="vercenter" style="text-align: center; font-size: 35px; color:green;">{{ (product.price * product.number) }}$</td>
-                    <td class="vercenter" style="text-align: center;"><img src="https://store.fcbarcelona.com/medias/?context=bWFzdGVyfGltYWdlc3wzMDY4NTd8aW1hZ2UvanBlZ3xoODYvaDk5Lzg4OTM3NTIwNDk2OTR8ODAwYjIzNzQ0OWQ5NTU3MzljZjRiMWY2N2I0NjI4MGYwODkzMmJhN2E1OTY4Mjc4NzNlYjQ5MDg4ODI2NGFlZA" style="width: 8rem;"></td>
-=======
-                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ all3 }}$</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px; color:green;">{{ all3 }}$</td>
                     <td class="vercenter" style="text-align: center;"><img src="https://www.soccerbible.com/media/103023/barca-locker-room.jpg" style="width: 8rem;"></td>
->>>>>>> a6c6837a2f92c546fc9fd87b9dd7ead861c6b179
                     <td class="vercenter" style="text-align: center; font-size: 25px;">
                       <form action="/delete" method="POST">
                       <input name="id" value={{ product.pid }} type="hidden">  
@@ -133,15 +119,10 @@
                   {% endif %}
                   {% if product.pid == 4 %}
                   <tr>
-                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.pname }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px; color: #630000;">{{ product.pname }}</td>
                     <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.number }}</td>
-<<<<<<< HEAD
-                    <td class="vercenter" style="text-align: center; font-size: 35px; color:green;">{{ (product.price * product.number) }}$</td>
-                    <td class="vercenter" style="text-align: center;"><img src="https://store.fcbarcelona.com/medias/700x1060-CU7822-451-2.jpg?context=bWFzdGVyfGltYWdlc3wxODA2NDd8aW1hZ2UvanBlZ3xoNGMvaGFmLzg5MDg4MDE3Njk1MDIvNzAweDEwNjAvQ1U3ODIyLTQ1MV8yLmpwZ3w2YzU0ZjZiZjA1MDhjYmE5ZjkzYzU1NGI3YTM0OGMzY2NjNzRiNjAyZDVkNjhjZmQ2NmI0OTVmNWY5ZjU2ODBl" style="width: 8rem;"></td>
-=======
-                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ all4 }}$</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px; color:green;">{{ all4 }}$</td>
                     <td class="vercenter" style="text-align: center;"><img src="https://www.soccerbible.com/media/103023/barca-locker-room.jpg" style="width: 8rem;"></td>
->>>>>>> a6c6837a2f92c546fc9fd87b9dd7ead861c6b179
                     <td class="vercenter" style="text-align: center; font-size: 25px;">
                       <form action="/delete" method="POST">
                       <input name="id" value={{ product.pid }} type="hidden">  
@@ -152,15 +133,10 @@
                   {% endif %}
                   {% if product.pid == 5 %}
                   <tr>
-                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.pname }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px; color: #630000;">{{ product.pname }}</td>
                     <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.number }}</td>
-<<<<<<< HEAD
-                    <td class="vercenter" style="text-align: center; font-size: 35px; color:green;">{{ (product.price * product.number) }}$</td>
-                    <td class="vercenter" style="text-align: center;"><img src="https://store.fcbarcelona.com/medias/?context=bWFzdGVyfGltYWdlc3wyNzQyNTJ8aW1hZ2UvanBlZ3xoOTgvaDRjLzg4OTM3MzM4OTYyMjJ8MjRkZTJjNjg4MWUyOTA2Y2I0ZTI5MmJjOGQzMzk5NmJhNWVkMDlmZTlhNjEyZTIyN2U1OWQ1YzMzODJkMjA4Ng" style="width: 8rem;"></td>
-=======
-                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ all5 }}$</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px; color:green;">{{ all5 }}$</td>
                     <td class="vercenter" style="text-align: center;"><img src="https://www.fcbarcelona.com/fcbarcelona/photo/2020/02/24/3f1215ed-07e8-47ef-b2c7-8a519f65b9cd/mini_UP3_20200105_FCB_VIS_View_1a_Empty.jpg" style="width: 8rem;"></td>
->>>>>>> a6c6837a2f92c546fc9fd87b9dd7ead861c6b179
                     <td class="vercenter" style="text-align: center; font-size: 25px;">
                       <form action="/delete" method="POST">
                       <input name="id" value={{ product.pid }} type="hidden">  
@@ -171,13 +147,9 @@
                   {% endif %}
                   {% if product.pid == 6 %}
                   <tr>
-                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.pname }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px; color: #630000;">{{ product.pname }}</td>
                     <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.number }}</td>
-<<<<<<< HEAD
-                    <td class="vercenter" style="text-align: center; font-size: 35px; color:green;">{{ (product.price * product.number) }}$</td>
-                    <td class="vercenter" style="text-align: center;"><img src="https://store.fcbarcelona.com/medias/700x1060-BLMP000814003-2.jpg?context=bWFzdGVyfGltYWdlc3wyODAwOTV8aW1hZ2UvanBlZ3xoYTYvaGI1Lzg5MTA4NzI2NDE1NjYvNzAweDEwNjAvQkxNUDAwMDgxNDAwM18yLmpwZ3w4OGQ0N2JiYzBmYjk1N2MxNWQ1MjUyOTg0ZGRkZDllNjk3Mjg0NTc3Y2YwZTFmYjcwZWQxYmM2NzQ4NjQ4M2I3" style="width: 8rem;"></td>
-=======
-                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ all6 }}$</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px; color:green;">{{ all6 }}$</td>
                     <td class="vercenter" style="text-align: center;"><img src="https://www.soccerbible.com/media/103023/barca-locker-room.jpg" style="width: 8rem;"></td>
                     <td class="vercenter" style="text-align: center; font-size: 25px;">
                       <form action="/delete" method="POST">
@@ -189,11 +161,10 @@
                   {% endif %}
                   {% if product.pid == 7 %}
                   <tr>
-                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.pname }}</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px; color: #630000;">{{ product.pname }}</td>
                     <td class="vercenter" style="text-align: center; font-size: 35px;">{{ product.number }}</td>
-                    <td class="vercenter" style="text-align: center; font-size: 35px;">{{ (product.price * product.number) }}$</td>
+                    <td class="vercenter" style="text-align: center; font-size: 35px; color:green;">{{ (product.price * product.number) }}$</td>
                     <td class="vercenter" style="text-align: center;"><img src="https://www.fcbarcelona.com/fcbarcelona/photo/2020/02/24/3f1215ed-07e8-47ef-b2c7-8a519f65b9cd/mini_UP3_20200105_FCB_VIS_View_1a_Empty.jpg" style="width: 8rem;"></td>
->>>>>>> a6c6837a2f92c546fc9fd87b9dd7ead861c6b179
                     <td class="vercenter" style="text-align: center; font-size: 25px;">
                       <form action="/delete" method="POST">
                       <input name="id" value={{ product.pid }} type="hidden">  
@@ -204,9 +175,9 @@
                   {% endif %}
                   {% endfor %}
                   <tr>
-                    <td class="vercenter1" style="text-align: center; font-size: 35px;">totall</td>
+                    <td class="vercenter1" style="text-align: center; font-size: 35px; color: #DD4A48;">totall</td>
                     <td class="vercenter1" class="vercenter" style="text-align: center; font-size: 35px;">{{ allnum }}</td>
-                    <td class="vercenter1" style="text-align: center; font-size: 35px; color:lime;">{{ allprice }}$</td>
+                    <td class="vercenter1" style="text-align: center; font-size: 35px; color: orange;">{{ allprice }}$</td>
                     <td class="vercenter1" style="text-align: center; font-size: 35px;"></td>
                     <td class="vercenter1" style="text-align: center; font-size: 35px;"></td>
                   </tr>

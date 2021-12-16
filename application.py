@@ -907,6 +907,8 @@ def cart():
         except:
             pass
 
+        allnum = num1 + num2 + num3 + num4 + num5 + num6
+
 
         allprice = float(all1) + float(all2) + float(all3) + float(all4) + float(all5) + float(all6)
 
@@ -921,7 +923,7 @@ def cart():
             return render_template("fail.html", main=main, message=message)
 
         name = session["username"]
-        return render_template("cart.html", products=products, allprice=round(allprice), name=name, all1=all1, all2=all2, all3=all3, all4=all4, all5=all5, all6=all6)
+        return render_template("cart.html", products=products, allprice=round(allprice), name=name, all1=all1, all2=all2, all3=all3, all4=all4, all5=all5, all6=all6, allnum=allnum)
 
 
 @app.route("/delete", methods=["POST", "GET"])
@@ -1188,133 +1190,3 @@ def buy():
 #        return render_template("iner.html", a=all1, b=all2, c=all3, d=allprice, e=all4, f=all5, g=all6)
 
         return render_template("buy.html", allrpice=round(allprice))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
