@@ -505,7 +505,7 @@ def product1():
 
     else:
         name = session["username"]
-        return render_template("product1.html", name=name)          ###################
+        return render_template("temp.html", name=name)          ###################
 
 
 
